@@ -1,10 +1,6 @@
-import React from 'react';
+import React from "react";
+import styles from "./Navbar.module.css";
 
-export default function navbar() {
-  return (
-    <div>
-      
-    </div>
-  );
+export default function Navbar() {
+  return <div>navbar</div>;
 }
-

@@ -11,6 +11,8 @@ import {
 } from "react-router-dom";
 import Root from "./pages/Root/root";
 import Login from "./pages/Login/login";
+import Lank from "./pages/Lank/Lank";
+import Grade from "./pages/Grade/Grade";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -20,7 +22,8 @@ root.render(
       <Routes>
         <Route path="/" element={<Root />}></Route>
         <Route path="/a" element={<Login />}></Route>
-        <Route path="/a" element={<Login />}></Route>
+        <Route path="/Lank" element={<Lank />}></Route>
+        <Route path="/Grade" element={<Grade />}></Route>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
