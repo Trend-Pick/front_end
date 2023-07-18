@@ -11,8 +11,8 @@ import {
 } from "react-router-dom";
 import Root from "./pages/Root/root";
 import Login from "./pages/Login/login";
-import Lank from "./pages/Lank/Lank";
-import Grade from "./pages/Grade/Grade";
+import Lank from "./pages/Lank/lank";
+import Grade from "./pages/Grade/grade";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -21,7 +21,7 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Root />}></Route>
-        <Route path="/a" element={<Login />}></Route>
+        <Route path="/Login" element={<Login />}></Route>
         <Route path="/Lank" element={<Lank />}></Route>
         <Route path="/Grade" element={<Grade />}></Route>
       </Routes>

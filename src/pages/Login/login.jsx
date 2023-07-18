@@ -14,8 +14,21 @@ function Login(){
     const pwChange=(e)=>{
         setPw(e.target.value)
     }
+    const onKeyPress=(e)=>{
+        if(e.key=="Enter"){
+            login()
+        }
+    }
 
     const login=()=>{
+        if(id==""){
+            alert("아이디를 입력해주세요")
+            window.location.reload()
+        }
+        if(pw==""){
+            alert("패스워드를 입력해주세요")
+            window.location.reload()
+        }
         axios.get("http://localhost:3001/users")
         .then((response) => {
             console.log(response.data)
@@ -25,7 +38,7 @@ function Login(){
                     break
                 }
                 else{
-                    alert("실패")
+                    alert("로그인 실패")
                     window.location.reload()
                     break
                 }
@@ -45,7 +58,7 @@ function Login(){
                     <span id={styles.label}>아이디</span><br></br>
                     <input onChange={idChange} placeholder="아이디를 입력해주세요" id={styles.id} type="text"></input><br></br>
                     <span id={styles.label}>비밀번호</span><br></br>
-                    <input onChange={pwChange} id={styles.pw} placeholder="비밀번호를 입력해주세요" type="text"></input><br></br>
+                    <input onChange={pwChange} id={styles.pw} placeholder="비밀번호를 입력해주세요" type="text" onKeyPress={onKeyPress}></input><br></br>
                     <button type="button" id={styles.submit} onClick={login}>로그인</button>
                 </div>
                 <span id={styles.link}><a>회원가입</a> | <a>비밀번호 찾기</a></span>
