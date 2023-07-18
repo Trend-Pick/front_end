@@ -20,8 +20,7 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Root />}></Route>
-        <Route path="/Login" element={<Login />}></Route>
+        <Route path="/" element={<Login />}></Route>
         <Route path="/Lank" element={<Lank />}></Route>
         <Route path="/Grade" element={<Grade />}></Route>
       </Routes>
