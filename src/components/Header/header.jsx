@@ -4,7 +4,7 @@ export default function Header({ title, summary, buttons }) {
   return (
     <header>
       <h1 className={styles.title}>{title}</h1>
-      <h2>{summary}</h2>
+      <h2 cn>{summary}</h2>
     </header>
   );
 }
