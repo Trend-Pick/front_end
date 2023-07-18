@@ -3,6 +3,10 @@ html,body{
     padding: 0;
 }
 
+#wrapper{
+    background-color: white;
+}
+
 #logo{
     height: 50vh;
     background-color: antiquewhite;
@@ -16,30 +20,13 @@ html,body{
 
 
 #loginForm{
-    text-align: center;
     margin-top: 5%;
     margin-bottom: 7%;
 }
 
-#label{
-    font-weight: bold;
-    display: flex;
-    margin-left: 10%;
-}
-
-#id,#pw::placeholder {
-  padding-left: 10px;
-}
 
 
-#id,#pw{
-    width: 80%;
-    margin-bottom: 5%;
-    border-radius: 50px;
-    height: 40px;
-    border: none;
-    background-color: rgb(234, 231, 231);
-}
+
 
 #submit{
     width: 90%;

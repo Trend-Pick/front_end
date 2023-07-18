@@ -1,0 +1,46 @@
+#wrapper{
+    background-color: rgb(233, 231, 231)
+}
+
+#header{
+    height: 10vh;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-bottom: solid 4px rgb(201, 200, 200);
+    background-color: white;
+}
+
+#registerFormWrapper{
+    height: 90vh;
+    display: flex;
+    align-items: center; 
+    flex-direction: column;
+}
+
+#registerForm{
+    overflow: scroll;
+    margin-top: 10px;
+    height: 70vh;
+    width: 95%;
+    margin: 10px;
+    margin-top: 5%;
+    border-radius: 20px;
+    background-color: white;
+}
+
+#registerBtn{
+    width: 90%;
+    height: 6vh;
+    border: none;
+    border-radius: 50px;
+    margin-top: 3vh;
+    background-color: rgb(248, 130, 148);
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}

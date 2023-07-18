@@ -14,5 +14,7 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: rgb(242, 240, 240);
   height: 100vh;
 }
+

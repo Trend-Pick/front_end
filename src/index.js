@@ -13,6 +13,7 @@ import Root from "./pages/Root/root";
 import Login from "./pages/Login/login";
 import Lank from "./pages/Lank/lank";
 import Grade from "./pages/Grade/grade";
+import Register from "./pages/Register/register";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -23,6 +24,7 @@ root.render(
         <Route path="/" element={<Login />}></Route>
         <Route path="/Lank" element={<Lank />}></Route>
         <Route path="/Grade" element={<Grade />}></Route>
+        <Route path="/Register" element={<Register />}></Route>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
