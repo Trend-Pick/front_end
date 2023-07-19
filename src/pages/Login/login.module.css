@@ -43,3 +43,11 @@ html,body{
 #link{
     margin-top: 5%;
 }
+
+#register{
+    text-decoration: none;
+}
+
+#register:visited{
+    color:black
+}

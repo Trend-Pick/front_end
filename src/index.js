@@ -9,7 +9,6 @@ import {
   Link,
   useParams,
 } from "react-router-dom";
-import Root from "./pages/Root/root";
 import Login from "./pages/Login/login";
 import Lank from "./pages/Lank/lank";
 import Grade from "./pages/Grade/grade";
