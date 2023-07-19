@@ -9,10 +9,9 @@ import {
   Link,
   useParams,
 } from "react-router-dom";
-import Root from "./pages/Root/root";
 import Login from "./pages/Login/login";
-import Lank from "./pages/Lank/Lank";
-import Grade from "./pages/Grade/Grade";
+import Lank from "./pages/Lank/lank";
+import Grade from "./pages/Grade/grade";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
