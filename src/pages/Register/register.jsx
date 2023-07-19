@@ -32,14 +32,31 @@ function Register(){
         setNick(e.target.value)
     }
     const registerBtn=(e)=>{
+        if(id===""){
+            alert("아이디를 입력해주세요")
+            return
+        }
+        if(email===""){
+            alert("이메일을 입력해주세요")
+            return
+        }
+        if(pw1===""){
+            alert("패스워드를 입력해주세요")
+            return
+        }
+        if(nick===""){
+            alert("닉네임을 입력해주세요")
+            return
+        }
         if(!bool){
             alert("8자이상 숫자 영문 특수문자를 포함해주세요")
-            window.location.reload()
+            return
         }
         if(pw1!=pw2){
             alert("비밀번호가 일치하지 않습니다.")
-            window.location.reload()
+            return
         }
+        
         const apiUrl = "http://localhost:3001/users";
 
         
@@ -54,6 +71,8 @@ function Register(){
         .post(`${apiUrl}`, updatedUserInfo)
         .then((response) => {
             console.log("User updated successfully:", response.data);
+            alert("회원가입을 완료하였습니다.")
+            window.location.href="/"
         })
         .catch((error) => {
             console.error("Failed to update user:", error);
