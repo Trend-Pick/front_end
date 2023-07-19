@@ -3,12 +3,14 @@ import styles from "./register.module.css"
 import Form from "../../components/Form/form";
 import axios from "axios";
 function Register(){
+    const [inputChk,setInputChk]=useState(false)
     const [bool,setBool]=useState(false)
     const [id,setId]=useState("")
     const [email,setEmail]=useState("")
     const [pw1,setPw1]=useState("")
     const [pw2,setPw2]=useState("")
     const [nick,setNick]=useState("")
+    const [buttonChk,setButtonChk]=useState(true)
     const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/
     const changeId=(e)=>{
         setId(e.target.value)
@@ -31,6 +33,29 @@ function Register(){
     const changeNick=(e)=>{
         setNick(e.target.value)
     }
+    const idcheck = async () => {
+        if(id===""){
+            alert("아이디를 입력해주세요")
+            return
+        }
+        try {
+          const response = await axios.get("http://localhost:3001/users");
+          setButtonChk(true);
+          for (var i = 0; i < response.data.length; i++) {
+            if (response.data[i].username === id) {
+              alert("아이디가 중복됩니다.");
+              return;
+            }
+          }
+          alert("중복확인이 완료되었습니다.");
+          setButtonChk(false);
+          setInputChk(true)
+        } catch (error) {
+          console.log(error);
+          alert("중복확인에 실패하였습니다.");
+        }
+      };
+      
     const registerBtn=(e)=>{
         if(id===""){
             alert("아이디를 입력해주세요")
@@ -83,13 +108,19 @@ function Register(){
             <header id={styles.header}>회원가입</header>
             <div id={styles.registerFormWrapper}>
                 <div id={styles.registerForm}>
-                    <Form onInputChange={changeId} spanName="아이디" placeholder="아이디를 입력해주세요"></Form>
+                    <div id={styles.form}>
+                        <span >아이디</span>
+                        <div>
+                            <input onChange={changeId} disabled={inputChk} placeholder="아이디를 입력해주세요"type="text"></input>
+                            <button onClick={idcheck} type="button">중복확인</button>
+                        </div>
+                    </div>
                     <Form onInputChange={changeEmail} spanName="이메일" placeholder="이메일을 입력해주세요"></Form>
                     <Form onInputChange={changePw1} spanName="비밀번호" placeholder="특수문자 제외 10자리 이상 입력해주세요."></Form>
                     <Form onInputChange={changePw2} spanName="비밀번호 확인" placeholder="비밀번호를 다시 입력해주세요"></Form>
                     <Form onInputChange={changeNick} spanName="닉네임" placeholder="닉네임을 입력해주세요"></Form>
                 </div>
-                <button onClick={registerBtn} type="button" id={styles.registerBtn} >회원가입</button>
+                <button onClick={registerBtn} type="button" disabled={buttonChk} id={styles.registerBtn} >회원가입</button>
             </div>
         </div>
     )
