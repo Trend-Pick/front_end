@@ -1,6 +1,7 @@
 .grade{
   display: flex;
   flex-direction: column;
+  width: inherit;
   height: 100vh;
   background-color: var(--color-background);
 }
