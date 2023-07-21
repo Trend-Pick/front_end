@@ -1,6 +1,6 @@
 .navbar {
   position: fixed;
-  width: 100%;
+  width: inherit;
   height: 70px;
   bottom: 0;
   display: flex;
