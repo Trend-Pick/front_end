@@ -13,6 +13,7 @@ html,body{
 }
 
 #loginFormWrapper{
+    overflow: scroll;
     height: 50vh;
     text-align: center;
 }
@@ -38,6 +39,10 @@ html,body{
     color: white;
     font-size: 20px;
     font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5%;
 }
 
 #link{

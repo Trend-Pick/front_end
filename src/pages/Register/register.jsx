@@ -112,13 +112,13 @@ function Register(){
                         <span >아이디</span>
                         <div>
                             <input onChange={changeId} disabled={inputChk} placeholder="아이디를 입력해주세요"type="text"></input>
-                            <button onClick={idcheck} type="button">중복확인</button>
+                            <button onClick={idcheck} type="button">확인</button>
                         </div>
                     </div>
-                    <Form onInputChange={changeEmail} spanName="이메일" placeholder="이메일을 입력해주세요"></Form>
-                    <Form onInputChange={changePw1} spanName="비밀번호" placeholder="특수문자 제외 10자리 이상 입력해주세요."></Form>
-                    <Form onInputChange={changePw2} spanName="비밀번호 확인" placeholder="비밀번호를 다시 입력해주세요"></Form>
-                    <Form onInputChange={changeNick} spanName="닉네임" placeholder="닉네임을 입력해주세요"></Form>
+                    <Form onInputChange={changeEmail} spanName="이메일" placeholder="이메일을 입력해주세요" type="text"></Form>
+                    <Form onInputChange={changePw1} spanName="비밀번호" placeholder="특수문자 제외 10자리 이상 입력해주세요." type="text"></Form>
+                    <Form onInputChange={changePw2} spanName="비밀번호 확인" placeholder="비밀번호를 다시 입력해주세요" type="text"></Form>
+                    <Form onInputChange={changeNick} spanName="닉네임" placeholder="닉네임을 입력해주세요" type="text"></Form>
                 </div>
                 <button onClick={registerBtn} type="button" disabled={buttonChk} id={styles.registerBtn} >회원가입</button>
             </div>

@@ -22,14 +22,14 @@
     },
     {
       "username": "rlwn5904",
-      "password": "rlwn2282@",
+      "password": "rlwn@",
       "nick": "남기주",
       "email": "rlwn5904@naver.com",
       "id": 5
     },
     {
       "username": "namkijoo17",
-      "password": "rlwn2282@",
+      "password": "rlwn@",
       "nick": "",
       "email": "rlwn5904@gmail.com",
       "id": 6
@@ -104,5 +104,33 @@
       "email": "asd",
       "id": 16
     }
+  ],
+  "boardList": [
+    {
+      "id":"1",
+      "roomName":"1번글dddddddaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaadddddddddaaaaaaaaaaaadd",
+      "content":"어쩌구dmd저쩌구asdffffsdfffㄴㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁfffffㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff크크"
+    },
+    {
+      "id":"2",
+      "roomName":"2번글",
+      "content":"어쩌구저쩌구"
+    },
+    {
+      "id":"3",
+      "roomName":"4번글",
+      "content":"어쩌구저쩌구"
+    },
+    {
+      "id":"4",
+      "roomName":"4번글",
+      "content":"어쩌구저쩌구"
+    },
+    {
+      "id":"5",
+      "roomName":"5번글",
+      "content":"어쩌구저쩌구"
+    }
   ]
 }
+

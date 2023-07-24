@@ -36,7 +36,7 @@ function Login(){
                 if(response.data[i].username==id && response.data[i].password==pw){
                     isLoginSuccessful=true
                     alert("로그인하였습니다.")
-                    window.location.reload()
+                    window.location.href="/board"
                     break
                 }
             }
@@ -56,8 +56,8 @@ function Login(){
             </div>
             <div id={styles.loginFormWrapper}>
                 <div id={styles.loginForm}> 
-                    <Form spanName="아이디" placeholder="아이디를 입력해주세요" onInputChange={idChange}></Form>
-                    <Form spanName="비밀번호" placeholder="비밀번호를 입력해주세요" onInputChange={pwChange} enter={onKeyPress}></Form>
+                    <Form spanName="아이디" placeholder="아이디를 입력해주세요" onInputChange={idChange} type="text"></Form>
+                    <Form spanName="비밀번호" placeholder="비밀번호를 입력해주세요" onInputChange={pwChange} enter={onKeyPress} type="password"></Form>
                     <button type="button" id={styles.submit} onClick={login}>로그인</button>
                 </div>
                 <span id={styles.link}><Link id={styles.register} to={"/Register"}>회원가입</Link> | <a>비밀번호 찾기</a></span>
