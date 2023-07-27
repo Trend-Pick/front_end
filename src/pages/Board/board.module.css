@@ -72,3 +72,9 @@
   height: 70%;
   margin : 5%;
 }
+
+#writeBtn{
+  position: fixed;
+  right: 40%;
+  top: 5px;
+}

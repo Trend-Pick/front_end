@@ -56,7 +56,7 @@ export default function Board() {
                   <div id={styles.title1}>{item.roomName}</div>
                   <span id={styles.date1}>닉네임/{
                   Math.floor((currentTime-item.date)/(1000*60))<60?Math.floor((currentTime-item.date)/(1000*60))+"분전":
-                  Math.floor((currentTime-item.date)/(1000*60))>=60?Math.floor((currentTime-item.date)/(1000*60*60)):null
+                  (Math.floor((currentTime-item.date)/(1000*60))>=60?Math.floor((currentTime-item.date)/(1000*60*60))+"시간전": Math.floor((currentTime-item.date)/(1000*60*60*1024))+"일전")
                   }
                 </span>
                   <div id={styles.content1}>{item.content.length>20?item.content.slice(0, 20) + "...":item.content}</div>
