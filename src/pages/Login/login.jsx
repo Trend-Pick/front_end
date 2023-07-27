@@ -35,6 +35,8 @@ function Login(){
             for(var i=0; i<response.data.length; i++){
                 if(response.data[i].username==id && response.data[i].password==pw){
                     isLoginSuccessful=true
+                    sessionStorage.clear()
+                    sessionStorage.setItem("id",String(id))
                     alert("로그인하였습니다.")
                     window.location.href="/board"
                     break

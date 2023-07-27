@@ -17,12 +17,10 @@ export default function Board() {
   },[])
 
   useEffect(() => {
-    // 컴포넌트가 마운트될 때와 업데이트될 때마다 현재 시간을 업데이트합니다.
     const timer = setInterval(() => {
       setCurrentTime(new Date());
-    }, 100000); // 1초마다 업데이트
+    }, 100000); 
 
-    // 컴포넌트가 언마운트될 때 타이머를 해제합니다.
     return () => clearInterval(timer);
   }, []);
 
@@ -42,7 +40,7 @@ export default function Board() {
             <div id={styles.boardList} key={item.id}>
               {item.image==null?
               <div>
-                <div id={styles.title1}>{item.roomName}</div>
+                <div id={styles.title1}>{item.title}</div>
                 <span id={styles.date1}>닉네임/{
                   Math.floor((currentTime-item.date)/(1000*60))<60?Math.floor((currentTime-item.date)/(1000*60))+"분전":
                   (Math.floor((currentTime-item.date)/(1000*60))>=60?Math.floor((currentTime-item.date)/(1000*60*60))+"시간전": Math.floor((currentTime-item.date)/(1000*60*60*1024))+"일전")
@@ -53,7 +51,7 @@ export default function Board() {
               :
               <div id={styles.wrapper2}>
                 <div id={styles.div1}>
-                  <div id={styles.title1}>{item.roomName}</div>
+                  <div id={styles.title1}>{item.title}</div>
                   <span id={styles.date1}>닉네임/{
                   Math.floor((currentTime-item.date)/(1000*60))<60?Math.floor((currentTime-item.date)/(1000*60))+"분전":
                   (Math.floor((currentTime-item.date)/(1000*60))>=60?Math.floor((currentTime-item.date)/(1000*60*60))+"시간전": Math.floor((currentTime-item.date)/(1000*60*60*1024))+"일전")
