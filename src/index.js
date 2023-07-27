@@ -15,7 +15,7 @@ import Grade from "./pages/Grade/grade";
 import Register from "./pages/Register/register";
 import Board from "./pages/Board/board";
 import Profile from "./pages/Profile/profile";
-import Write from "./pages/WriteBoard/write";
+import Write from "./pages/writeBoard/write";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 

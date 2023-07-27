@@ -20,9 +20,8 @@ input{
     height: 40px;
     border: none;
     background-color: rgb(234, 231, 231);
+    padding-left: 10px;
 }
 
-input::placeholder {
-    padding-left: 10px;
-  }
+
   
