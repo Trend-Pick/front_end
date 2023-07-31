@@ -41,9 +41,9 @@ export default function Board() {
               {item.image==null?
               <div>
                 <div id={styles.title1}>{item.title}</div>
-                <span id={styles.date1}>닉네임/{
+                <span id={styles.date1}>{item.writeUserName}/{
                   Math.floor((currentTime-item.date)/(1000*60))<60?Math.floor((currentTime-item.date)/(1000*60))+"분전":
-                  (Math.floor((currentTime-item.date)/(1000*60))>=60?Math.floor((currentTime-item.date)/(1000*60*60))+"시간전": Math.floor((currentTime-item.date)/(1000*60*60*1024))+"일전")
+                  (360>Math.floor((currentTime-item.date)/(1000*60))>=60?Math.floor((currentTime-item.date)/(1000*60*60))+"시간전": Math.floor((currentTime-item.date)/(1000*60*60*24))+"일전")
                   }
                 </span>
                 <div id={styles.content1}>{item.content.length>45?item.content.slice(0, 45) + "...":item.content}</div>
@@ -52,7 +52,7 @@ export default function Board() {
               <div id={styles.wrapper2}>
                 <div id={styles.div1}>
                   <div id={styles.title1}>{item.title}</div>
-                  <span id={styles.date1}>닉네임/{
+                  <span id={styles.date1}>{item.writeUserName}/{
                   Math.floor((currentTime-item.date)/(1000*60))<60?Math.floor((currentTime-item.date)/(1000*60))+"분전":
                   (Math.floor((currentTime-item.date)/(1000*60))>=60?Math.floor((currentTime-item.date)/(1000*60*60))+"시간전": Math.floor((currentTime-item.date)/(1000*60*60*1024))+"일전")
                   }
