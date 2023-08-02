@@ -26,83 +26,6 @@
       "nick": "남기주",
       "email": "rlwn5904@naver.com",
       "id": 5
-    },
-    {
-      "username": "namkijoo17",
-      "password": "rlwn@",
-      "nick": "",
-      "email": "rlwn5904@gmail.com",
-      "id": 6
-    },
-    {
-      "username": "namkijoo17",
-      "password": "rlwn2282@",
-      "nick": "",
-      "email": "rlwn5904@gmail.com",
-      "id": 7
-    },
-    {
-      "username": "namkijoo17",
-      "password": "rlwn2282@",
-      "nick": "",
-      "email": "rlwn5904@gmail.com",
-      "id": 8
-    },
-    {
-      "username": "namkijoo17",
-      "password": "rlwn2282@",
-      "nick": "",
-      "email": "rlwn5904@gmail.com",
-      "id": 9
-    },
-    {
-      "username": "namkijoo17",
-      "password": "rlwn2282@",
-      "nick": "dsjlf",
-      "email": "rlwn5904@gmail.com",
-      "id": 10
-    },
-    {
-      "username": "namkijoo17",
-      "password": "rlwn2282@",
-      "nick": "dsjlf",
-      "email": "rlwn5904@gmail.com",
-      "id": 11
-    },
-    {
-      "username": "namkijoo17",
-      "password": "rlwn2282@",
-      "nick": "dsjlf",
-      "email": "rlwn5904@gmail.com",
-      "id": 12
-    },
-    {
-      "username": "namkijoo17",
-      "password": "rlwn2282@",
-      "nick": "dsjlf",
-      "email": "rlwn5904@gmail.com",
-      "id": 13
-    },
-    {
-      "username": "namkijoo17",
-      "password": "rlwn2282@",
-      "nick": "dsjlf",
-      "email": "rlwn5904@gmail.com",
-      "id": 14
-    },
-    {
-      "username": "namkijoo17",
-      "password": "rlwn2282@",
-      "nick": "dsjlf",
-      "email": "rlwn5904@gmail.com",
-      "id": 15
-    },
-    {
-      "username": "sadf",
-      "password": "rlwn5904@",
-      "nick": "asdf",
-      "email": "asd",
-      "id": 16
     }
   ],
   "boardList": [
@@ -393,6 +316,28 @@
       "hour": 5,
       "min": 31,
       "id": 18
+    },
+    {
+      "rno": "5",
+      "reply": "sdafda",
+      "writer": "rlwn5904",
+      "Year": 2023,
+      "Month": 7,
+      "day": 4,
+      "hour": 5,
+      "min": 32,
+      "id": 19
+    },
+    {
+      "rno": "5",
+      "reply": "safsda",
+      "writer": "rlwn5904",
+      "Year": 2023,
+      "Month": 7,
+      "day": 4,
+      "hour": 5,
+      "min": 32,
+      "id": 20
     }
   ]
 }

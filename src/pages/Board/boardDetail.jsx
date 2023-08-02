@@ -76,6 +76,17 @@ function BoardDetail(){
     const replyChange=(e)=>{
         setReply(e.target.value)
     }
+
+    const replyDelete=(e)=>{
+        axios.delete(`http://localhost:3001/boardReply/${e}`)
+        .then((response)=>{
+            console.log(response.data)
+            window.location.reload()
+        })
+        .catch((err)=>{
+            console.log(err)
+        })
+    }
     return(
         <div id={styles.wrapper}>
             <Header/>
@@ -93,21 +104,21 @@ function BoardDetail(){
                         <div>{board.content}</div>
                     </div>
                 </div>
-                
+                <div id={styles.replyWrapper}> 
                     {replyList.map((item,idx)=>{
                         return(
                             <div id={styles.replyBox}>
                                 <div id={styles.replyWriter}>{item.writer}</div>
                                 <div id={styles.etc2}>
                                     <div id={styles.date}>{item.Year}년 {item.Month}월 {item.Year}일 {item.hour}:{item.min}</div>
-                                    <div id={styles.delete}>삭제</div>
+                                    {sessionStorage.getItem("id")==item.writer?<div id={styles.delete} onClick={() => replyDelete(item.id)}>삭제</div>:<div id={styles.delete}></div>}
                                 </div>
                                 <div id={styles.reply}>{item.reply}</div>
                                 
                             </div>
                         )
                     })}
-                
+                </div>
             </div>
             <div id={styles.writeReply}>
                 <input id={styles.replyInput} onChange={replyChange} />
