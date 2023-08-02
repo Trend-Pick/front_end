@@ -28,7 +28,7 @@
   padding-bottom: 15vh;
 }
 
-#title1{
+#title{
   width: 95%;
   margin-top: 15px;
   margin-left: 10px;
@@ -38,6 +38,7 @@
   white-space: nowrap; 
   overflow: hidden;
   text-overflow: ellipsis;
+  text-decoration: none;
 }
 
 #date1{
@@ -73,3 +74,7 @@
   margin : 5%;
 }
 
+#Link{
+  text-decoration: none;
+  color: inherit;
+}

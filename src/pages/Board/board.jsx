@@ -3,6 +3,7 @@ import Header from "../../components/Header/header";
 import Navbar from "../../components/Navbar/navbar";
 import styles from './board.module.css'
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 export default function Board() {
   const [boardList,setBoardList]=useState([])
@@ -40,24 +41,24 @@ export default function Board() {
             <div id={styles.boardList} key={item.id}>
               {item.image==null?
               <div>
-                <div id={styles.title1}>{item.title}</div>
+                <Link to={"/boardDetail?idx="+`${item.id}`} id={styles.Link}><div id={styles.title}>{item.title}</div></Link> 
                 <span id={styles.date1}>{item.writeUserName}/{
                   Math.floor((currentTime-item.date)/(1000*60))<60?Math.floor((currentTime-item.date)/(1000*60))+"분전":
                   (360>Math.floor((currentTime-item.date)/(1000*60))>=60?Math.floor((currentTime-item.date)/(1000*60*60))+"시간전": Math.floor((currentTime-item.date)/(1000*60*60*24))+"일전")
                   }
                 </span>
-                <div id={styles.content1}>{item.content.length>45?item.content.slice(0, 45) + "...":item.content}</div>
+                <div id={styles.content1}>{(item.content).length>45?item.content.slice(0, 45) + "...":item.content}</div>
               </div>
               :
               <div id={styles.wrapper2}>
                 <div id={styles.div1}>
-                  <div id={styles.title1}>{item.title}</div>
+                <Link to={"/boardDetail?idx="+`${item.id}`} id={styles.Link}><div id={styles.title}>{item.title}</div></Link> 
                   <span id={styles.date1}>{item.writeUserName}/{
                   Math.floor((currentTime-item.date)/(1000*60))<60?Math.floor((currentTime-item.date)/(1000*60))+"분전":
                   (Math.floor((currentTime-item.date)/(1000*60))>=60?Math.floor((currentTime-item.date)/(1000*60*60))+"시간전": Math.floor((currentTime-item.date)/(1000*60*60*1024))+"일전")
                   }
                 </span>
-                  <div id={styles.content1}>{item.content.length>20?item.content.slice(0, 20) + "...":item.content}</div>
+                  <div id={styles.content1}>{(item.content).length>20?item.content.slice(0, 20) + "...":item.content}</div>
                 </div>
                 <div id={styles.div2}>
                   <img src={item.image}></img>

@@ -15,8 +15,8 @@ import Grade from "./pages/Grade/grade";
 import Register from "./pages/Register/register";
 import Board from "./pages/Board/board";
 import Profile from "./pages/Profile/profile";
-import Write from "./pages/writeBoard/write";
-
+import BoardWrite from "./pages/Board/write";
+import BoardDetail from "./pages/Board/boardDetail";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
@@ -28,7 +28,8 @@ root.render(
         <Route path="/Grade" element={<Grade />}></Route>
         <Route path="/Register" element={<Register />}></Route>
         <Route path="/Board" element={<Board />}></Route>
-        <Route path="/Write" element={<Write/>}></Route>
+        <Route path="/BoardWrite" element={<BoardWrite/>}></Route>
+        <Route path="/BoardDetail" element={<BoardDetail />}></Route>
         <Route path="/Profile" element={<Profile />}></Route>
       </Routes>
     </BrowserRouter>
