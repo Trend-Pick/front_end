@@ -96,3 +96,39 @@
     word-wrap: break-word;
     word-break:keep-all;
 }
+
+#replyBox{
+    width: 100%;
+    background-color: white;
+    margin-top: 10px;
+    border-radius: 20px;
+}
+
+#replyWriter{
+    padding: 20px 20px 0px 20px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#etc2{
+    padding: 5px 20px 0px 20px;
+    font-size: 10px;
+    font-weight: 100;
+    display: flex;
+}
+
+#date{
+    width: 70%;
+}
+
+#delete{
+    width: 30%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#reply{
+    padding: 10px 20px 20px 20px;
+    font-weight: 400;
+    font-size: 16px;
+}

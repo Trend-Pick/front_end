@@ -2,7 +2,7 @@ import React,{useEffect,useState} from "react";
 import styles from "./boardDetail.module.css"
 import Header from "../../components/Header/header";
 import axios from "axios";
-import { Link,useParams,useLocation } from "react-router-dom";
+import { Link,useParams,useLocation, redirect } from "react-router-dom";
 
 function BoardDetail(){
     const location = useLocation();
@@ -18,7 +18,13 @@ function BoardDetail(){
     const [replyList,setReplyList]=useState([{
         rno:"",
         reply:"",
-        id:""
+        id:"",
+        writer:"",
+        Year:"",
+        Month:"",
+        day:"",
+        hour:"",
+        min:""
     }])
     useEffect(()=>{
         const Data = async () => {
@@ -33,6 +39,7 @@ function BoardDetail(){
     },[idx])
 
     useEffect(()=>{
+        
         const Data = async () => {
             try {
               const response = await axios.get(`http://localhost:3001/boardReply?rno=${idx}`);
@@ -44,14 +51,26 @@ function BoardDetail(){
           Data();
     },[idx])
 
-    const send=()=>{
+    
+    const send=async ()=>{
+        const date = new Date()
         const updateReply={
             rno:idx,
-            reply:reply
+            reply:reply,
+            writer:sessionStorage.getItem("id"),
+            Year:date.getFullYear(),
+            Month:date.getMonth(),
+            day:date.getDay(),
+            hour:date.getHours(),
+            min:date.getMinutes()
         }
-        axios.post("http://localhost:3001/boardReply",updateReply)
-        .then((response)=>console.log(response.data))
-        .catch((error)=>console.log(error))
+        try {
+            const response = await axios.post("http://localhost:3001/boardReply", updateReply);
+            console.log(response.data);
+            window.location.reload()
+          } catch (error) {
+            console.log(error);
+          }
     }
 
     const replyChange=(e)=>{
@@ -74,13 +93,21 @@ function BoardDetail(){
                         <div>{board.content}</div>
                     </div>
                 </div>
-                <div id={styles.reply}>
+                
                     {replyList.map((item,idx)=>{
                         return(
-                            <div id={styles.replyBox}>{item.reply}</div>
+                            <div id={styles.replyBox}>
+                                <div id={styles.replyWriter}>{item.writer}</div>
+                                <div id={styles.etc2}>
+                                    <div id={styles.date}>{item.Year}년 {item.Month}월 {item.Year}일 {item.hour}:{item.min}</div>
+                                    <div id={styles.delete}>삭제</div>
+                                </div>
+                                <div id={styles.reply}>{item.reply}</div>
+                                
+                            </div>
                         )
                     })}
-                </div>
+                
             </div>
             <div id={styles.writeReply}>
                 <input id={styles.replyInput} onChange={replyChange} />
