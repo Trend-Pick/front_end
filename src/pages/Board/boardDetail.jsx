@@ -97,7 +97,7 @@ function BoardDetail(){
                     </div>
                     <div id={styles.etc}>
                         <div id={styles.nick}>닉네임 {board.date}</div>
-                        <div id={styles.edit}>수정 | 삭제</div>
+                        <div id={styles.edit}><Link to={`/boardEdit?id=${board.id}`}>수정</Link> | 삭제</div>
                     </div>
                     {board.image==null?null:<div id={styles.boardImage}><img src={board.image}></img></div>}
                     <div id={styles.content}>

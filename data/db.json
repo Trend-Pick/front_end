@@ -30,17 +30,16 @@
   ],
   "boardList": [
     {
-      "id": "1",
       "title": "1번글dddddddaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaadddddddddaaaaaaaaaaaadd",
-      "content": "어쩌구dmd저쩌구asdffffsdfffㄴㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁfffffㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff크크",
-      "image": "/img/logo192.png",
-      "date": "1690399195444"
+      "content": "어쩌구dmd저쩌구asdffffsdfffㄴㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁfffffㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff크크sdfs",
+      "date": 1691138486818,
+      "id": "1"
     },
     {
-      "id": "2",
       "title": "2번글",
-      "content": "어쩌구dmd저쩌구asdffffsdfffㄴㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁfffffㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff크크",
-      "date": "1690399195444"
+      "content": "어쩌구dmd저쩌구asdffffsdfffㄴㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁfffffㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇffff크크",
+      "date": 1691138328531,
+      "id": "2"
     },
     {
       "id": "3",
@@ -116,6 +115,13 @@
       "content": "ddddddddddd",
       "date": 1690465493584,
       "id": "13"
+    },
+    {
+      "writeUserName": "rlwn5904",
+      "title": "sadf",
+      "content": "sadf\n",
+      "date": 1691135724359,
+      "id": "bNYlGms"
     }
   ],
   "boardReply": [
@@ -162,17 +168,6 @@
       "hour": 5,
       "min": 14,
       "id": 4
-    },
-    {
-      "rno": "2",
-      "reply": "",
-      "writer": "rlwn5904",
-      "Year": 2023,
-      "Month": 7,
-      "day": 4,
-      "hour": 5,
-      "min": 14,
-      "id": 5
     },
     {
       "rno": "2",
@@ -283,17 +278,6 @@
       "hour": 5,
       "min": 28,
       "id": 15
-    },
-    {
-      "rno": "2",
-      "reply": "",
-      "writer": "rlwn5904",
-      "Year": 2023,
-      "Month": 7,
-      "day": 4,
-      "hour": 5,
-      "min": 29,
-      "id": 16
     },
     {
       "rno": "1",
