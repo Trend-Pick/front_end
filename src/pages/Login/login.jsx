@@ -28,7 +28,7 @@ function Login(){
         if(pw==""){
             alert("패스워드를 입력해주세요")
         }
-        axios.get("http://localhost:3001/users")
+        /*axios.get("http://localhost:3001/users")
         .then((response) => {
             let isLoginSuccessful = false;
 
@@ -49,7 +49,17 @@ function Login(){
         }
         )
         
-        .catch((error) => console.log(error));
+        .catch((error) => console.log(error));*/
+        axios.post("http://3.35.99.247:8080/login",{
+            user_user_id:id,
+            password:pw
+        })
+        .then((reponse)=>{
+            console.log(reponse)
+        })
+        .catch((e)=>{
+            console.log(e)
+        })
     }
     return(
         <div id={styles.wrapper}>

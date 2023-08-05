@@ -39,7 +39,7 @@ function Register(){
             return
         }
         try {
-          const response = await axios.get("http://localhost:3001/users");
+          const response = await axios.get(`http://3.35.99.247:8080/validation?userId=${id}`);
           setButtonChk(true);
           for (var i = 0; i < response.data.length; i++) {
             if (response.data[i].username === id) {

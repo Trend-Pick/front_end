@@ -107,7 +107,7 @@ function BoardDetail(){
                 <div id={styles.replyWrapper}> 
                     {replyList.map((item,idx)=>{
                         return(
-                            <div id={styles.replyBox}>
+                            <div id={styles.replyBox} key={idx}>
                                 <div id={styles.replyWriter}>{item.writer}</div>
                                 <div id={styles.etc2}>
                                     <div id={styles.date}>{item.Year}년 {item.Month}월 {item.Year}일 {item.hour}:{item.min}</div>
