@@ -50,10 +50,14 @@ function Login(){
         )
         
         .catch((error) => console.log(error));*/
-        axios.post("http://3.35.99.247:8080/login",{
+        axios.post("/login",{
             user_user_id:id,
             password:pw
-        })
+        },{
+            headers: {
+              'Content-Type': 'application/json',
+            },
+          })
         .then((reponse)=>{
             console.log(reponse)
         })

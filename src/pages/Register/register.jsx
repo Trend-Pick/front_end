@@ -39,7 +39,7 @@ function Register(){
             return
         }
         try {
-          const response = await axios.get(`http://3.35.99.247:8080/validation?userId=${id}`);
+            const response = await axios.post("/validation/id", { userId: id });
           setButtonChk(true);
           for (var i = 0; i < response.data.length; i++) {
             if (response.data[i].username === id) {
@@ -55,6 +55,17 @@ function Register(){
           alert("중복확인에 실패하였습니다.");
         }
       };
+
+
+      const idcheck2=()=>{
+        axios.get(`/validation?userId=${id}`)
+        .then((reponse)=>{
+            console.log(reponse)
+        })
+        .catch((e)=>{
+            console.log(e)
+        })
+      }
       
     const registerBtn=(e)=>{
         if(id===""){
