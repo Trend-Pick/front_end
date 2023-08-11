@@ -26,12 +26,16 @@ export default function Board() {
     return () => clearInterval(timer);
   }, []);
 
+  const goWrite=()=>{
+    window.location.href="/BoardWrite"
+  }
   return (
     <div className={styles.board}>
       <Header
         id={styles.header}
         type={"board"}
         title={"자유게시판"}
+        handleBtnClick={goWrite}
         buttons={<FiEdit />}
       ></Header>
       <div id={styles.wrapper}>
