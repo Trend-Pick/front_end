@@ -18,6 +18,7 @@ import Profile from "./pages/Profile/profile";
 import BoardWrite from "./pages/Board/write";
 import BoardDetail from "./pages/Board/boardDetail";
 import BoardEdit from "./pages/Board/boardEdit";
+import FindPw from "./pages/findPw/findPw";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(

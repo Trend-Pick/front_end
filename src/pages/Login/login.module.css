@@ -47,6 +47,7 @@ html,body{
 
 #link{
     margin-top: 5%;
+    cursor: pointer;
 }
 
 #register{
@@ -56,3 +57,5 @@ html,body{
 #register:visited{
     color:black
 }
+
+

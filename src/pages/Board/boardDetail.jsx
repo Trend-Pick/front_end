@@ -29,7 +29,8 @@ function BoardDetail(){
     useEffect(()=>{
         const Data = async () => {
             try {
-              const response = await axios.get(`http://localhost:3001/boardList/${idx}`);
+              const response = await axios.get(`/post/${idx}`);
+              console.log(response)
               setBoard(response.data);
             } catch (error) {
               console.error(error); 

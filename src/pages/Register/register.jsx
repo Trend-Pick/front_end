@@ -39,18 +39,18 @@ function Register(){
             return
         }
         try {
-            const response = await axios.post("/validation/id", { userId: id }
-              );
-          setButtonChk(true);
-          for (var i = 0; i < response.data.length; i++) {
-            if (response.data[i].username === id) {
-              alert("아이디가 중복됩니다.");
-              return;
-            }
+            const response = await axios.post("/validation/id", { userId: id });
+          console.log(response)
+          if(response.data==false){
+            setButtonChk(false);
+            alert("아이디가 중복됩니다.")
+            setInputChk(false)
           }
-          alert("중복확인이 완료되었습니다.");
-          setButtonChk(false);
-          setInputChk(true)
+          else{
+            alert("중복확인이 완료되었습니다.")
+            setButtonChk(false);
+            setInputChk(true)
+          }
         } catch (error) {
           console.log(error);
           alert("중복확인에 실패하였습니다.");
@@ -58,15 +58,12 @@ function Register(){
       };
 
 
-      const idcheck2=()=>{
-        axios.get(`/validation?userId=${id}`)
-        .then((reponse)=>{
-            console.log(reponse)
-        })
-        .catch((e)=>{
-            console.log(e)
-        })
-      }
+      const onKeyPress=(e)=>{
+        if(e.key=="Enter"){
+            idcheck()
+        }
+    }
+
       
     const registerBtn=(e)=>{
         if(id===""){
@@ -94,18 +91,17 @@ function Register(){
             return
         }
         
-        const apiUrl = "http://localhost:3001/users";
+        const apiUrl = "member/add";
 
         
         const updatedUserInfo = {
-        username: id, 
+        user_user_id: id, 
         password: pw1, 
-        nick:nick,
+        nickname:nick,
         email:email
         };
 
-        axios
-        .post(`${apiUrl}`, updatedUserInfo)
+        axios.post(`${apiUrl}`, updatedUserInfo)
         .then((response) => {
             console.log("User updated successfully:", response.data);
             alert("회원가입을 완료하였습니다.")
@@ -123,7 +119,7 @@ function Register(){
                     <div id={styles.form}>
                         <span >아이디</span>
                         <div>
-                            <input onChange={changeId} disabled={inputChk} placeholder="아이디를 입력해주세요"type="text"></input>
+                            <input onChange={changeId} disabled={inputChk} placeholder="아이디를 입력해주세요"type="text" onKeyDown={onKeyPress}></input>
                             <button onClick={idcheck} type="button">확인</button>
                         </div>
                     </div>

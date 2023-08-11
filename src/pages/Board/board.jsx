@@ -11,7 +11,8 @@ export default function Board() {
   const [currentTime, setCurrentTime] = useState(new Date());
 
   useEffect(() => {
-    axios.get("http://localhost:3001/boardList").then((response) => {
+    axios.get("/post_list")
+      .then((response) => {
       console.log(response.data);
       setBoardList(response.data);
     });
@@ -34,13 +35,13 @@ export default function Board() {
         buttons={<FiEdit />}
       ></Header>
       <div id={styles.wrapper}>
-        {boardList.map((item) => {
+        {boardList.map((item,idx) => {
           return (
-            <div id={styles.boardList} key={item.id}>
+            <div id={styles.boardList} key={idx}>
               {item.image == null ? (
                 <div>
                   <Link
-                    to={"/boardDetail?idx=" + `${item.id}`}
+                    to={"/boardDetail?idx=" + `${idx}`}
                     id={styles.Link}
                   >
                     <div id={styles.title}>{item.title}</div>
@@ -70,7 +71,7 @@ export default function Board() {
                 <div id={styles.wrapper2}>
                   <div id={styles.div1}>
                     <Link
-                      to={"/boardDetail?idx=" + `${item.id}`}
+                      to={"/boardDetail?idx=" + `${idx}`}
                       id={styles.Link}
                     >
                       <div id={styles.title}>{item.title}</div>
