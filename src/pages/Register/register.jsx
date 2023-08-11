@@ -39,7 +39,8 @@ function Register(){
             return
         }
         try {
-            const response = await axios.post("/validation/id", { userId: id });
+            const response = await axios.post("/validation/id", { userId: id }
+              );
           setButtonChk(true);
           for (var i = 0; i < response.data.length; i++) {
             if (response.data[i].username === id) {
