@@ -39,9 +39,9 @@ function Register(){
             return
         }
         try {
-            const response = await axios.post("/validation/id", { userId: id });
+            const response = await axios.post("/validation/id", { user_user_id: id });
           console.log(response)
-          if(response.data==false){
+          if(response.data==true){
             setButtonChk(false);
             alert("아이디가 중복됩니다.")
             setInputChk(false)
