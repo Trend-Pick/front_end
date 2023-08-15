@@ -42,27 +42,27 @@ export default function Board() {
         {boardList.map((item,idx) => {
           return (
             <div id={styles.boardList} key={idx}>
-              {item.image == null ? (
+              {item.postImgUrl == null ? (
                 <div>
                   <Link
-                    to={"/boardDetail?idx=" + `${idx}`}
+                    to={"/boardDetail?idx=" + `${item.id}`}
                     id={styles.Link}
                   >
                     <div id={styles.title}>{item.title}</div>
                   </Link>
                   <span id={styles.date1}>
-                    {item.writeUserName}/
-                    {Math.floor((currentTime - item.date) / (1000 * 60)) < 60
-                      ? Math.floor((currentTime - item.date) / (1000 * 60)) +
+                    {item.user_nickname}/
+                    {Math.floor((currentTime - new Date(item.postTime).getTime()) / (1000 * 60)) < 60
+                      ? Math.floor((currentTime - new Date(item.postTime).getTime()) / (1000 * 60)) +
                         "분전"
                       : 360 >
-                        Math.floor((currentTime - item.date) / (1000 * 60)) >=
+                        Math.floor((currentTime - new Date(item.postTime).getTime()) / (1000 * 60)) >=
                         60
                       ? Math.floor(
-                          (currentTime - item.date) / (1000 * 60 * 60)
+                          (currentTime - new Date(item.postTime).getTime()) / (1000 * 60 * 60)
                         ) + "시간전"
                       : Math.floor(
-                          (currentTime - item.date) / (1000 * 60 * 60 * 24)
+                          (currentTime - new Date(item.postTime).getTime()) / (1000 * 60 * 60 * 24)
                         ) + "일전"}
                   </span>
                   <div id={styles.content1}>
@@ -75,23 +75,23 @@ export default function Board() {
                 <div id={styles.wrapper2}>
                   <div id={styles.div1}>
                     <Link
-                      to={"/boardDetail?idx=" + `${idx}`}
+                      to={"/boardDetail?idx=" + `${item.id}`}
                       id={styles.Link}
                     >
                       <div id={styles.title}>{item.title}</div>
                     </Link>
                     <span id={styles.date1}>
-                      {item.writeUserName}/
-                      {Math.floor((currentTime - item.date) / (1000 * 60)) < 60
-                        ? Math.floor((currentTime - item.date) / (1000 * 60)) +
+                      {item.user_nickname}/
+                      {Math.floor((currentTime - new Date(item.postTime).getTime()) / (1000 * 60)) < 60
+                        ? Math.floor((currentTime - new Date(item.postTime).getTime()) / (1000 * 60)) +
                           "분전"
-                        : Math.floor((currentTime - item.date) / (1000 * 60)) >=
+                        : Math.floor((currentTime - new Date(item.postTime).getTime()) / (1000 * 60)) >=
                           60
                         ? Math.floor(
-                            (currentTime - item.date) / (1000 * 60 * 60)
+                            (currentTime - new Date(item.postTime).getTime()) / (1000 * 60 * 60)
                           ) + "시간전"
                         : Math.floor(
-                            (currentTime - item.date) / (1000 * 60 * 60 * 1024)
+                            (currentTime - new Date(item.postTime).getTime()) / (1000 * 60 * 60 * 1024)
                           ) + "일전"}
                     </span>
                     <div id={styles.content1}>
@@ -101,7 +101,7 @@ export default function Board() {
                     </div>
                   </div>
                   <div id={styles.div2}>
-                    <img src={item.image}></img>
+                    <img src={item.postImgUrl}></img>
                   </div>
                 </div>
               )}

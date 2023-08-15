@@ -2,9 +2,20 @@
     background-color: rgb(233, 231, 231)
 }
 
+@media (min-width: 400px) {
+    #header {
+      width: 400px;
+    }
+  }
+  
+  @media (max-width: 400px) {
+    #header {
+      width:100vw;
+    }
+  }
+
 #header{
     height: 10vh;
-    width: 100vw;
     text-align: center;
     font-size: 30px;
     font-weight: bold;
