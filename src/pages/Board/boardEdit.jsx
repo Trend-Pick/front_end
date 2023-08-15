@@ -11,7 +11,6 @@ function BoardEdit(){
     const [title,setTitle]=useState("")
     const [content,setContent]=useState("")
     const [image,setImage]=useState("")
-    const [currentTime, setCurrentTime] = useState(new Date());
     const onChangeTitle=(e)=>{
         setTitle(e.target.value)
     }
@@ -29,9 +28,12 @@ function BoardEdit(){
                 content:content
             }
             if(image==""){
+              alert("d")
                 formData.append("createPostRequest",new Blob([JSON.stringify(createPostRequest)], {type:"application/json"}));
+                formData.append("imgInPost","");
             }
             else{
+              alert("D")
                 formData.append("createPostRequest",new Blob([JSON.stringify(createPostRequest)], {type:"application/json"}));
                 formData.append("imgInPost",new Blob([JSON.stringify(image)],{type:"multipart/form-data"}));
             }
@@ -39,7 +41,7 @@ function BoardEdit(){
           await axios.put(`/update_post/${id}`, formData,{headers: {
             'Content-Type': 'multipart/form-data',
         }})
-          console.log("수정되었습니다.")
+          alert("수정되었습니다.")
           window.location.href="/board"
         } catch (e) {
           console.log(e);
