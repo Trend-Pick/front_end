@@ -95,7 +95,7 @@ function BoardDetail(){
                     </div>
                     <div id={styles.etc}>
                         <div id={styles.nick}>{board.user_nickname} {new Date(board.time).getFullYear()}년 {new Date(board.time).getMonth()}월 {new Date(board.time).getDay()}일 {new Date(board.time).getHours()}시</div>
-                        <div id={styles.edit}><Link to={`/boardEdit?id=${board.id}`} id={styles.boardEditBtn}>수정</Link> | <div onClick={boardDelete}>삭제</div></div>
+                        <div id={styles.edit}><Link to={`/boardEdit?id=${idx}`} id={styles.boardEditBtn}>수정</Link> | <div onClick={boardDelete}>삭제</div></div>
                     </div>
                     {board.postImgUrl==null?null:<div id={styles.boardImage}><img src={board.postImgUrl}></img></div>}
                     <div id={styles.content}>
@@ -111,7 +111,8 @@ function BoardDetail(){
                                 <div id={styles.replyWriter}>{item.writer}</div>
                                 <div id={styles.etc2}>
                                     <div id={styles.date}>{new Date(item.time).getFullYear()}년 {new Date(item.time).getMonth()}월 {new Date(item.time).getDay()}일 {new Date(item.time).getHours()}시</div>
-                                    <div id={styles.delete} onClick={() => replyDelete(item.id)}>삭제</div>                                </div>
+                                    <div id={styles.delete} onClick={() => replyDelete(item.id)}>삭제</div>                                
+                                </div>
                                 <div id={styles.reply}>{item.content}</div>
                             </div>
                         )

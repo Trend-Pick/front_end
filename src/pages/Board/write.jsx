@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from "react";
+import React,{useState,useEffect,useRef} from "react";
 import styles from "./write.module.css"
 import Header from "../../components/Header/header";
 import axios from "axios";
@@ -53,16 +53,28 @@ function Write(){
         }
         
     }
-    
+    const imageInput = useRef();
+
+    const onClickImageUpload = () => {
+        imageInput.current.click();
+      };
         
-        
+    const deleteImage=()=>{
+        setImage("")
+    }
     return(
         <div id={styles.wrapper}>
             <div id={styles.writeForm}>
                 <input onChange={onChangeTitle} type="text" id={styles.title} placeholder="제목을 입력하세요"/>
                 <textarea onChange={onChangeContent} id={styles.content} placeholder="내용을 입력하세요."></textarea>
+                <div className={styles.filebox}>
+                    <label htmlFor={styles.file} onClick={onClickImageUpload}>+</label>
+                        <input type="file" style={{display:"none"}} id={styles.file} ref={imageInput} onChange={onChangeImage}/> 
+                        {image.name==null?null:<div id={styles.imageName} onClick={deleteImage}>{image.name.length > 40
+                        ? image.name.slice(0, 40) + "..."
+                        : image.name}</div>}
+                </div>
             </div>
-            <input type="file" onChange={onChangeImage}/>
             <button type="button" onClick={write}>확인</button>
         </div>
     )

@@ -17,7 +17,7 @@
 
 #title{
     height:15%;
-    width: 95%;
+    width: 90%;
     margin-left: 2.5%;
     background-color: white;
     border-bottom: 2px solid rgb(233, 231, 231);
@@ -32,7 +32,8 @@
 }
 
 #content{
-    height: 250px;
+    height: 70%;
+    overflow: flex;
     width: 93%;
     margin-left: 3.5%;
     border: none;
@@ -42,3 +43,27 @@
 #content::placeholder{
     color: rgb(233, 231, 231);
 }
+
+ .filebox{
+    text-align: center;
+    height: 5%;
+    display: flex;
+    align-items: center;
+ }
+.filebox label {
+    padding: .5em .75em;
+    color: black;
+    font-size: inherit;
+    background-color: #f1c7c7;
+    cursor: pointer;
+    border: 1px solid #ebebeb;
+    border-bottom-color: #e2e2e2;
+    border-radius: 100%;
+    margin-left: 3.5%;
+  }
+
+  #imageName{
+    overflow: hidden;
+    margin-left: 3.5%;
+    cursor: pointer;
+  }

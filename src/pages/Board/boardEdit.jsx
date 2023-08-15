@@ -1,10 +1,10 @@
-import React,{useState,useEffect} from "react";
+import React,{useState,useEffect,useRef} from "react";
 import styles from "./write.module.css"
 import Header from "../../components/Header/header";
 import { useLocation } from 'react-router-dom';
 import axios from "axios";
 
-function BoardEdit(props){
+function BoardEdit(){
     const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   const id = searchParams.get('id');
@@ -35,13 +35,23 @@ function BoardEdit(props){
           console.log(e);
         }
       };
+      const imageInput = useRef();
+
+    const onClickImageUpload = () => {
+        imageInput.current.click();
+      };
+        
+    const deleteImage=()=>{
+        setImage("")
+    }
     useEffect(()=>{
         const fetchData = async () => { 
             try {
-              const response = await axios.get(`http://localhost:3001/boardList?id=${id}`);
+              const response = await axios.get(`/post/${id}`);
               console.log(response.data);
-              setTitle(response.data[0].title);
-              setContent(response.data[0].content);
+              setTitle(response.data.title);
+              setContent(response.data.content);
+              setImage(response.data.postImgUrl)
             } catch (e) {
               console.log(e)
             }
@@ -54,8 +64,17 @@ function BoardEdit(props){
             <div id={styles.writeForm}>
                 <input onChange={onChangeTitle} value={title} type="text" id={styles.title} placeholder="제목을 입력하세요"/>
                 <textarea onChange={onChangeContent} value={content} id={styles.content} placeholder="내용을 입력하세요."></textarea>
+                <div className={styles.filebox}>
+                    <label htmlFor={styles.file} onClick={onClickImageUpload}>+</label>
+                        <input type="file" style={{display:"none"}} id={styles.file} ref={imageInput} onChange={onChangeImage}/> 
+                        {image.name==null?<div id={styles.imageName} onClick={deleteImage}>{image.length > 40
+                      ? image.slice(0, 40) + "..."
+                      : image}</div>:<div id={styles.imageName} onClick={deleteImage} >{image.name.length > 40
+                        ? image.name.slice(0, 40) + "..."
+                        : image.name}</div>}
+                </div>
             </div>
-            <input type="file" onChange={onChangeImage}/>
+
             <button type="button" onClick={submit}>확인</button>
         </div>
     )
