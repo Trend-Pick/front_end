@@ -76,6 +76,11 @@
     justify-content: flex-end;
 }
 
+#boardEditBtn{
+    text-decoration: none;
+    color: black;
+}
+
 #boardImage{
     padding: 0px 20px 10px 20px;
     display: flex;

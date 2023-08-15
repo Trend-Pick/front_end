@@ -91,8 +91,8 @@ function BoardDetail(){
                         <div>{board.title}</div>   
                     </div>
                     <div id={styles.etc}>
-                        <div id={styles.nick}>닉네임 {board.date}</div>
-                        <div id={styles.edit}><Link to={`/boardEdit?id=${board.id}`}>수정</Link> | <div onClick={boardDelete}>삭제</div></div>
+                        <div id={styles.nick}>{board.user_nickname} {new Date(board.time).getFullYear()}년 {new Date(board.time).getMonth()}월 {new Date(board.time).getDay()}일 {new Date(board.time).getHours()}시</div>
+                        <div id={styles.edit}><Link to={`/boardEdit?id=${board.id}`} id={styles.boardEditBtn}>수정</Link> | <div onClick={boardDelete}>삭제</div></div>
                     </div>
                     {board.postImgUrl==null?null:<div id={styles.boardImage}><img src={board.postImgUrl}></img></div>}
                     <div id={styles.content}>

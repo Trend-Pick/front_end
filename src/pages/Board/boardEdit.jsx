@@ -10,6 +10,7 @@ function BoardEdit(props){
   const id = searchParams.get('id');
     const [title,setTitle]=useState("")
     const [content,setContent]=useState("")
+    const [image,setImage]=useState("")
     const [currentTime, setCurrentTime] = useState(new Date());
     const onChangeTitle=(e)=>{
         setTitle(e.target.value)
@@ -17,6 +18,10 @@ function BoardEdit(props){
     const onChangeContent=(e)=>{
         setContent(e.target.value)
     }
+    const onChangeImage=(e)=>{
+      setImage(e.target.files[0])
+      console.log(e.target.files[0])
+  }
     const submit = async () => {
         try {
           await axios.put(`http://localhost:3001/boardList/${id}`, {
@@ -50,6 +55,7 @@ function BoardEdit(props){
                 <input onChange={onChangeTitle} value={title} type="text" id={styles.title} placeholder="제목을 입력하세요"/>
                 <textarea onChange={onChangeContent} value={content} id={styles.content} placeholder="내용을 입력하세요."></textarea>
             </div>
+            <input type="file" onChange={onChangeImage}/>
             <button type="button" onClick={submit}>확인</button>
         </div>
     )
