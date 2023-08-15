@@ -51,14 +51,17 @@ function BoardDetail(){
             axios.delete(`/delete_post/${idx}`)
         .then((response)=>{
             console.log(response)
-            if(response.data=="ok"){
-                window.location.reload()
+            if(response.statusText=="OK"){
+                alert("삭제되었습니다.")
+                window.location.href="/board"
             }
-            else if(response.data==''){
-                alert("본이 게시글만 삭제 가능합니다.")
+            else{
+                alert("본인이 쓴 게시물이 아닙니다.")
+                window.location.reload()
             }
         })
         .catch((err)=>{
+            alert("본인이 쓴 게시물이 아닙니다.")
             console.log(err)
         })
         }
