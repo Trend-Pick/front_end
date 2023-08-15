@@ -23,12 +23,22 @@ function BoardEdit(){
       console.log(e.target.files[0])
   }
     const submit = async () => {
+      const formData = new FormData();
+            let createPostRequest={
+                title:title,
+                content:content
+            }
+            if(image==""){
+                formData.append("createPostRequest",new Blob([JSON.stringify(createPostRequest)], {type:"application/json"}));
+            }
+            else{
+                formData.append("createPostRequest",new Blob([JSON.stringify(createPostRequest)], {type:"application/json"}));
+                formData.append("imgInPost",new Blob([JSON.stringify(image)],{type:"multipart/form-data"}));
+            }
         try {
-          await axios.put(`http://localhost:3001/boardList/${id}`, {
-            title: title,
-            content: content,
-            date:Math.floor(currentTime)
-          });
+          await axios.put(`/update_post/${id}`, formData,{headers: {
+            'Content-Type': 'multipart/form-data',
+        }})
           console.log("수정되었습니다.")
           window.location.href="/board"
         } catch (e) {
