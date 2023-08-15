@@ -44,6 +44,29 @@ function BoardDetail(){
         setReply(e.target.value)
     }
 
+    const boardDelete=()=>{
+        const Delete = window.confirm('삭제 하시겠습니까?');
+        
+        if(Delete){
+            axios.delete(`/delete_post/${idx}`)
+        .then((response)=>{
+            console.log(response)
+            if(response.data=="ok"){
+                window.location.reload()
+            }
+            else if(response.data==''){
+                alert("본이 게시글만 삭제 가능합니다.")
+            }
+        })
+        .catch((err)=>{
+            console.log(err)
+        })
+        }
+        else{
+            return
+        }
+    }
+
     const replyDelete=(e)=>{
         axios.delete(`/delete_comment/${e}`)
         .then((response)=>{
@@ -69,7 +92,7 @@ function BoardDetail(){
                     </div>
                     <div id={styles.etc}>
                         <div id={styles.nick}>닉네임 {board.date}</div>
-                        <div id={styles.edit}><Link to={`/boardEdit?id=${board.id}`}>수정</Link> | 삭제</div>
+                        <div id={styles.edit}><Link to={`/boardEdit?id=${board.id}`}>수정</Link> | <div onClick={boardDelete}>삭제</div></div>
                     </div>
                     {board.postImgUrl==null?null:<div id={styles.boardImage}><img src={board.postImgUrl}></img></div>}
                     <div id={styles.content}>
