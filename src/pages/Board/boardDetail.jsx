@@ -48,7 +48,12 @@ function BoardDetail(){
         axios.delete(`/delete_comment/${e}`)
         .then((response)=>{
             console.log(response)
-            window.location.reload()
+            if(response.data=="ok"){
+                window.location.reload()
+            }
+            else if(response.data==''){
+                alert("본이 댓글만 삭제 가능합니다.")
+            }
         })
         .catch((err)=>{
             console.log(err)
@@ -79,9 +84,8 @@ function BoardDetail(){
                             <div id={styles.replyBox} key={idx}>
                                 <div id={styles.replyWriter}>{item.writer}</div>
                                 <div id={styles.etc2}>
-                                    <div id={styles.date}>{item.Year}년 {item.Month}월 {item.Year}일 {item.hour}:{item.min}</div>
-                                    {sessionStorage.getItem("id")==item.writer?<div id={styles.delete} onClick={() => replyDelete(item.id)}>삭제</div>:<div id={styles.delete}></div>}
-                                </div>
+                                    <div id={styles.date}>{new Date(item.time).getFullYear()}년 {new Date(item.time).getMonth()}월 {new Date(item.time).getDay()}일 {new Date(item.time).getHours()}시</div>
+                                    <div id={styles.delete} onClick={() => replyDelete(item.id)}>삭제</div>                                </div>
                                 <div id={styles.reply}>{item.content}</div>
                             </div>
                         )
