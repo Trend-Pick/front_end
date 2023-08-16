@@ -1,7 +1,0 @@
-.lank {
-  display: flex;
-  width: inherit;
-  height: 100vh;
-  flex-direction: column;
-  background-color: var(--color-background);
-}

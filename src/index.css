@@ -15,7 +15,8 @@ body{
   justify-content: center;
   align-items: center;
   background-color: rgb(242, 240, 240);
-  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+  /* overflow: hidden; */
 }
 
 h1,
@@ -42,7 +43,7 @@ p {
   --color-shadow: rgba(0, 0, 0, 0.20);
 
   /* font size */
-  --font-size-header-title: 30px;
+  --font-size-header-title: 26px;
   --font-size-header-text: 16px;
   --font-size-footer-icons: 24px;
   --font-size-footer-plus: 40px
