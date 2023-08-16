@@ -3,7 +3,7 @@ header{
   justify-content: center;
   position: fixed;
   width: inherit;
-  height: 70px;
+  height: 65px;
   top:0;
   padding: 16px 20px 16px 20px;
   background-color: var(--color-white);
@@ -16,7 +16,7 @@ header{
   flex-direction: column;
 }
 
-.header_board{
+.header_board, .header_board_write{
   display: flex;
   justify-content: space-between;
 }
@@ -24,9 +24,11 @@ header{
 .header_profile {
   justify-content: flex-end;
 }
+.header_board_detail{
+  justify-content: flex-start;
+}
 
-
-.icons_profile, .icons_board{
+.icons_profile, .icons_board_write{
   display: flex;
   justify-content: center;
   align-items: center;

@@ -3,6 +3,7 @@ import styles from "./write.module.css"
 import Header from "../../components/Header/header";
 import axios from "axios";
 
+import {FiPlusCircle, FiArrowLeft} from "react-icons/fi";
 function Write(){
     const [title,setTitle]=useState("")
     const [content,setContent]=useState("")
@@ -64,6 +65,7 @@ function Write(){
     }
     return(
         <div id={styles.wrapper}>
+                  <Header type={"board_write"} buttons={[<FiArrowLeft/>,<FiPlusCircle/>]}></Header>
             <div id={styles.writeForm}>
                 <input onChange={onChangeTitle} type="text" id={styles.title} placeholder="제목을 입력하세요"/>
                 <textarea onChange={onChangeContent} id={styles.content} placeholder="내용을 입력하세요."></textarea>

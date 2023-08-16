@@ -3,6 +3,8 @@ import styles from "./boardDetail.module.css"
 import Header from "../../components/Header/header";
 import axios from "axios";
 import { Link,useParams,useLocation, redirect } from "react-router-dom";
+import {FiArrowLeft} from "react-icons/fi";
+
 
 function BoardDetail(){
     const location = useLocation();
@@ -87,7 +89,7 @@ function BoardDetail(){
     }
     return(
         <div id={styles.wrapper}>
-            <Header/>
+                  <Header type={"board_detail"} buttons={<FiArrowLeft/>}></Header>
             <div id={styles.wrapper2}>
                 <div id={styles.boardDetail}>
                     <div id={styles.title}>

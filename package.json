@@ -7,6 +7,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.4.0",
+    "cors": "^2.8.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icon": "^1.0.0",
@@ -15,6 +16,7 @@
     "react-scripts": "5.0.1",
     "stream-http": "^3.2.0",
     "styled-components": "^6.0.4",
+    "swiper": "^10.1.0",
     "url-polyfill": "^1.1.12",
     "web-vitals": "^2.1.4"
   },
@@ -45,5 +47,5 @@
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
   },
-  "proxy" : "http://3.35.99.247:8080/"
+  "proxy": "http://3.35.99.247:8080/"
 }
