@@ -93,7 +93,6 @@ function Register(){
         
         const apiUrl = "member/add";
 
-        
         const updatedUserInfo = {
         user_user_id: id, 
         password: pw1, 

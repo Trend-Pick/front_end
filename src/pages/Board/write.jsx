@@ -65,7 +65,7 @@ function Write(){
     }
     return(
         <div id={styles.wrapper}>
-                  <Header type={"board_write"} buttons={[<FiArrowLeft/>,<FiPlusCircle/>]}></Header>
+                  <Header  type={"board_write"} buttons={[<FiArrowLeft/>,<FiPlusCircle/>]} handleBtnClick={write}></Header>
             <div id={styles.writeForm}>
                 <input onChange={onChangeTitle} type="text" id={styles.title} placeholder="제목을 입력하세요"/>
                 <textarea onChange={onChangeContent} id={styles.content} placeholder="내용을 입력하세요."></textarea>
@@ -77,7 +77,6 @@ function Write(){
                         : image.name}</div>}
                 </div>
             </div>
-            <button type="button" onClick={write}>확인</button>
         </div>
     )
 }

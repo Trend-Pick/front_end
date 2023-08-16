@@ -28,6 +28,29 @@ header{
   justify-content: flex-start;
 }
 
+@media (min-width: 400px) {
+  .header_board_detail {
+    width: 400px;
+  }
+}
+
+@media (max-width: 400px) {
+  .header_board_detail{
+    width:100vw;
+  }
+}
+@media (min-width: 400px) {
+  .header_board, .header_board_write {
+    width: 400px;
+  }
+}
+
+@media (max-width: 400px) {
+  .header_board, .header_board_write{
+    width:100vw;
+  }
+}
+
 .icons_profile, .icons_board_write{
   display: flex;
   justify-content: center;

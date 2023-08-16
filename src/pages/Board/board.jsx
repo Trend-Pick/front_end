@@ -32,7 +32,6 @@ export default function Board() {
   return (
     <div className={styles.board}>
       <Header
-        id={styles.header}
         type={"board"}
         title={"자유게시판"}
         handleBtnClick={goWrite}

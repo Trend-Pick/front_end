@@ -2,17 +2,18 @@ import React,{useEffect,useState} from "react";
 import styles from "./boardDetail.module.css"
 import Header from "../../components/Header/header";
 import axios from "axios";
-import { Link,useParams,useLocation, redirect } from "react-router-dom";
+import { Link,useParams,useLocation, redirect,useNavigate } from "react-router-dom";
 import {FiArrowLeft} from "react-icons/fi";
 
 
 function BoardDetail(){
-    const location = useLocation();
+    const location = useNavigate();
     const queryParams = new URLSearchParams(location.search);
     const idx = queryParams.get('idx');
     const [reply,setReply]=useState("")
     const [board, setBoard] = useState([{}]);
     const [replyList,setReplyList]=useState([{}])
+    const navigate = useNavigate();
     useEffect(()=>{
         const Data = async () => {
             try {
@@ -72,6 +73,8 @@ function BoardDetail(){
         }
     }
 
+
+
     const replyDelete=(e)=>{
         axios.delete(`/delete_comment/${e}`)
         .then((response)=>{
@@ -87,9 +90,19 @@ function BoardDetail(){
             console.log(err)
         })
     }
+
+    const back=()=>{
+        navigate(-1)
+    }
+
+    const Enters=(e)=>{
+        if(e.key=='Enter'){
+            send()
+        }
+    }
     return(
         <div id={styles.wrapper}>
-                  <Header type={"board_detail"} buttons={<FiArrowLeft/>}></Header>
+                  <Header type={"board_detail"} id={styles.dHeaders} buttons={<FiArrowLeft/>} handleBtnClick={back}></Header>
             <div id={styles.wrapper2}>
                 <div id={styles.boardDetail}>
                     <div id={styles.title}>
@@ -122,7 +135,7 @@ function BoardDetail(){
                 </div>
             </div>
             <div id={styles.writeReply}>
-                <input id={styles.replyInput} onChange={replyChange} />
+                <input id={styles.replyInput} onChange={replyChange} onKeyDown={Enters}/>
                 <img onClick={send} id={styles.send} src="/img/send.png"/>
             </div>
         </div>

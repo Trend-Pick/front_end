@@ -3,7 +3,7 @@ import styles from "./write.module.css"
 import Header from "../../components/Header/header";
 import { useLocation } from 'react-router-dom';
 import axios from "axios";
-
+import {FiPlusCircle, FiArrowLeft} from "react-icons/fi";
 function BoardEdit(){
     const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
@@ -28,21 +28,27 @@ function BoardEdit(){
                 content:content
             }
             if(image==""){
-              alert("d")
                 formData.append("createPostRequest",new Blob([JSON.stringify(createPostRequest)], {type:"application/json"}));
-                formData.append("imgInPost","");
             }
             else{
-              alert("D")
+                alert("D")
                 formData.append("createPostRequest",new Blob([JSON.stringify(createPostRequest)], {type:"application/json"}));
                 formData.append("imgInPost",new Blob([JSON.stringify(image)],{type:"multipart/form-data"}));
             }
         try {
-          await axios.put(`/update_post/${id}`, formData,{headers: {
+          const response =await axios.put(`/update_post/${id}`, formData,{headers: {
             'Content-Type': 'multipart/form-data',
         }})
-          alert("수정되었습니다.")
-          window.location.href="/board"
+          console.log(response)
+          if(response.data==""){
+            alert("자신이 쓴 게시물이 아닙니다.")
+            window.location.href="/board"
+          }
+          else{
+            alert("수정되었습니다.")
+            window.location.href="/board"
+          }
+          
         } catch (e) {
           console.log(e);
         }
@@ -63,7 +69,12 @@ function BoardEdit(){
               console.log(response.data);
               setTitle(response.data.title);
               setContent(response.data.content);
-              setImage(response.data.postImgUrl)
+              if(response.data.postImgUrl){
+                setImage(response.data.postImgUrl)
+              }
+              else{
+                setImage("")
+              }
             } catch (e) {
               console.log(e)
             }
@@ -72,7 +83,7 @@ function BoardEdit(){
     },[id])
     return(
             <div id={styles.wrapper}>
-            <Header></Header>    
+            <Header  type={"board_write"} buttons={[<FiArrowLeft/>,<FiPlusCircle/>]} handleBtnClick={submit}></Header>
             <div id={styles.writeForm}>
                 <input onChange={onChangeTitle} value={title} type="text" id={styles.title} placeholder="제목을 입력하세요"/>
                 <textarea onChange={onChangeContent} value={content} id={styles.content} placeholder="내용을 입력하세요."></textarea>
@@ -86,8 +97,6 @@ function BoardEdit(){
                         : image.name}</div>}
                 </div>
             </div>
-
-            <button type="button" onClick={submit}>확인</button>
         </div>
     )
 }
