@@ -1,5 +1,100 @@
-.card {
-  width: 299px;
-  height: 556px;
-  flex-shrink: 0;
+.card_grade {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 75%;
+  height: inherit;
+  border-radius: 15px;
+  background: var(--color-white);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.grade_img {
+  width: 85%;
+  height: 70%;
+  margin-bottom: 20px;
+  border-radius: 15px;
+}
+
+.grade_btn {
+  display: flex;
+}
+
+.plus_btn, .minus_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 70px;
+  background-color: var(--color-white);
+  border-radius: 20px;
+  font-size: 24px;
+  /* font-size: var(--font-size-card-icons); */
+  border-style: none;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  color: var(--color-accent);
+}
+
+.minus_btn {
+  margin-right: 30px;
+}
+
+
+.img {
+  width: 85%;
+  height: 70%;
+  margin-bottom: 20px;
+  border-radius: 15px;
+  /* background: lightgray 50% / cover no-repeat; */
+}
+
+
+.card_rank{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 90%;
+  height: inherit;
+  border-radius: 15px; 
+  background: var(--color-white); 
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+
+
+
+.profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.profile_img {
+  width: 44px;
+  height: 44px;
+  margin: 0px 15px 0px 15px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.profile_info {
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+}
+
+.profile_text {
+  display: flex;
+  font-size: 20px;
+}
+
+.profile_icon {
+  font-size: 20px;
+  margin: 5px 10px 0px 0px;
+
 }
