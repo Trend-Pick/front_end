@@ -108,7 +108,7 @@ export default function Board() {
           );
         })}
       </div>
-      <Navbar></Navbar>
+      <Navbar id={styles.nav}></Navbar>
     </div>
   );
 }

@@ -7,26 +7,29 @@ import {FiArrowLeft} from "react-icons/fi";
 
 
 function BoardDetail(){
-    const location = useNavigate();
+    const location = useLocation();
     const queryParams = new URLSearchParams(location.search);
     const idx = queryParams.get('idx');
     const [reply,setReply]=useState("")
     const [board, setBoard] = useState([{}]);
     const [replyList,setReplyList]=useState([{}])
     const navigate = useNavigate();
+    
+    const [counter, setCounter] = useState(true);
     useEffect(()=>{
         const Data = async () => {
             try {
               const response = await axios.get(`/post/${idx}`);
               console.log(response)
               setBoard(response.data);
+
               setReplyList(response.data.commentList)
             } catch (error) {
               console.error(error); 
             }
           };
           Data();
-    },[idx])
+    },[counter])
 
 
     
@@ -37,7 +40,8 @@ function BoardDetail(){
         try {
             const response = await axios.post(`/create/${idx}/comment`,updateReply);
         
-            window.location.reload()
+            setCounter(!counter)
+            setReply("")
           } catch (error) {
             console.log(error);
           }
@@ -80,7 +84,7 @@ function BoardDetail(){
         .then((response)=>{
             console.log(response)
             if(response.data=="ok"){
-                window.location.reload()
+                setCounter(!counter)
             }
             else if(response.data==''){
                 alert("본이 댓글만 삭제 가능합니다.")
@@ -135,7 +139,7 @@ function BoardDetail(){
                 </div>
             </div>
             <div id={styles.writeReply}>
-                <input id={styles.replyInput} onChange={replyChange} onKeyDown={Enters}/>
+                <input id={styles.replyInput} onChange={replyChange} onKeyDown={Enters} value={reply}/>
                 <img onClick={send} id={styles.send} src="/img/send.png"/>
             </div>
         </div>

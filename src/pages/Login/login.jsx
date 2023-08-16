@@ -5,6 +5,8 @@ import 'url-polyfill';
 import Form from "../../components/Form/form";
 import {Link} from 'react-router-dom';
 import FindPw from "../../pages/findPw/findPw";
+import { motion } from "framer-motion";
+import Animation from "../../components/Animation/animation";
 function Login(){
     const [id,setId]=useState("")
     const [pw,setPw]=useState("")
@@ -51,7 +53,7 @@ function Login(){
     }
     return(
         <div id={styles.wrapper}>
-            <div id={styles.logo}>
+            <div id={styles.logo}>c
                 <img src="#" alt="로고사진"></img>
             </div>
             <div id={styles.loginFormWrapper}>

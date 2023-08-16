@@ -17,22 +17,29 @@ import Profile from "./pages/Profile/profile";
 import BoardWrite from "./pages/Board/write";
 import BoardDetail from "./pages/Board/boardDetail";
 import BoardEdit from "./pages/Board/boardEdit";
-
+import { AnimatePresence } from 'framer-motion';
+import { motion } from "framer-motion";
 export default function App() {
- 
+  const AnimatedRoute = ({ path, element }) => (
+    <Route path={path} element={<motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.7 }}>{element}</motion.div>} />
+  );
+  
   return (
+    
     <React.StrictMode>
       <BrowserRouter>
+      <AnimatePresence>
         <Routes>
-          <Route path="/" element={<Login />}></Route>
+          <Route path="/"  element={<motion.div key="login" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.7 }} ><Login /></motion.div>}></Route>
           <Route path="/Grade" element={<Grade />}></Route>
-          <Route path="/Register" element={<Register />}></Route>
-          <Route path="/Board" element={<Board />}></Route>
-          <Route path="/BoardWrite" element={<BoardWrite />}></Route>
-          <Route path="/BoardDetail" element={<BoardDetail />}></Route>
-          <Route path="/BoardEdit" element={<BoardEdit />}></Route>
+          <Route path="/Register" element={<motion.div key="register" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.7 }} ><Register /></motion.div>}></Route>
+          <Route path="/Board" element={<motion.div key="board" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.7 }} ><Board /></motion.div>}></Route>
+          <Route path="/BoardWrite" element={<motion.div key="boardWrite" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.7 }} ><BoardWrite /></motion.div>}></Route>
+          <Route path="/BoardDetail" element={<motion.div key="boardDetail" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.7 }} ><BoardDetail /></motion.div>}></Route>
+          <Route path="/BoardEdit" element={<motion.div key="boardEdit" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.7 }} ><BoardEdit /></motion.div>}></Route>
           <Route path="/Profile" element={<Profile />}></Route>
         </Routes>
+        </AnimatePresence>
       </BrowserRouter>
     </React.StrictMode>
   );
