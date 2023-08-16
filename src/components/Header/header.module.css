@@ -1,22 +1,30 @@
-header{
+header {
   display: flex;
   justify-content: center;
   position: fixed;
   width: inherit;
-  height: 65px;
-  top:0;
+  height: 60px;
+  top: 0;
   padding: 16px 20px 16px 20px;
   background-color: var(--color-white);
   box-shadow: 0px 4px 20px 0px var(--color-shadow);
   box-sizing: border-box;
   z-index: 100;
 }
-.header_grade, .header_rank{
+
+.header_grade{
   display: flex;
   flex-direction: column;
 }
 
-.header_board, .header_board_write{
+.text_wrapper_rank, .container_rank{
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+
+.header_board,.header_rank,
+.header_board_write {
   display: flex;
   justify-content: space-between;
 }
@@ -24,19 +32,22 @@ header{
 .header_profile {
   justify-content: flex-end;
 }
-.header_board_detail{
+
+.header_board_detail, .header_upload {
   justify-content: flex-start;
 }
 
-.icons_profile, .icons_board_write{
+.icons_profile,
+.icons_board_write {
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
 }
 
-header>h1 {
+header>h1, .title_rank {
   font-size: var(--font-size-header-title);
+  cursor: pointer;
 }
 
 .text {
