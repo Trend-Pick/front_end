@@ -10,26 +10,6 @@
   }
 }
 
-body{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgb(242, 240, 240);
-  height: calc(var(--vh, 1vh) * 100);
-  /* overflow: hidden; */
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-  margin: 0;
-}
-
-
 :root {
   /* color code */
   --color-white: white;
@@ -46,6 +26,7 @@ p {
   --font-size-header-title: 26px;
   --font-size-header-text: 16px;
   --font-size-footer-icons: 24px;
-  --font-size-footer-plus: 40px
-  /* --font-size-default:  */
+  --font-size-footer-plus: 40px;
+  --font-size-card-icons: 30px;
+  /* --font-size-default: 24px; */
 }
