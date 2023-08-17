@@ -56,7 +56,7 @@ export default function Navbar() {
         </Link>
       </div>
       <div className={styles.plus}>
-        <Link to={"/write"}>
+        <Link to={"/cardupload"}>
           <button
             onClick={() => handleClick("plus")}
             className={styles.plus_btn}
