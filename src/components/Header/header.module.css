@@ -37,7 +37,6 @@ justify-content: center;
   justify-content: flex-start;
 }
 
-<<<<<<< HEAD
 @media (min-width: 400px) {
   .header_board_detail {
     width: 400px;
@@ -62,10 +61,6 @@ justify-content: center;
 }
 
 .icons_profile, .icons_board_write{
-=======
-.icons_profile,
-.icons_board_write {
->>>>>>> 0a86f8e8356fc2c0bdcad0a81b9308d114e1789f
   display: flex;
   justify-content: center;
   align-items: center;
