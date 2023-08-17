@@ -2,7 +2,6 @@ import React from "react";
 import styles from "./header.module.css";
 import { useNavigate } from "react-router-dom";
 
-// handleBtnClick props로 전달
 export default function Header({ type, title, text, buttons, handleBtnClick }) {
   const location = useNavigate();
   if (type == "grade" || type == "upload") {

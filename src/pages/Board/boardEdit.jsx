@@ -29,11 +29,11 @@ function BoardEdit(){
             }
             if(image==""){
                 formData.append("createPostRequest",new Blob([JSON.stringify(createPostRequest)], {type:"application/json"}));
+                formData.append("imgInPost","");
             }
             else{
-                alert("D")
                 formData.append("createPostRequest",new Blob([JSON.stringify(createPostRequest)], {type:"application/json"}));
-                formData.append("imgInPost",new Blob([JSON.stringify(image)],{type:"multipart/form-data"}));
+                formData.append("imgInPost",image);
             }
         try {
           const response =await axios.put(`/update_post/${id}`, formData,{headers: {
