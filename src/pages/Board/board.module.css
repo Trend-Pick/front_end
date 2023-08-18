@@ -58,6 +58,7 @@
 
 #wrapper2{
   display: flex;
+  overflow: hidden;
 }
 
 #div1{
@@ -66,6 +67,7 @@
 
 #div2{
   width: 40%;
+  
 }
 
 #div2 img{
