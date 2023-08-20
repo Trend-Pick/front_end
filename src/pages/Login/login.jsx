@@ -43,6 +43,7 @@ function Login(){
           })
         .then((reponse)=>{
             alert("로그인에 성공하셨습니다.")
+            sessionStorage.setItem("id",id)
             window.location.href="/board"
             console.log(reponse)
         })
