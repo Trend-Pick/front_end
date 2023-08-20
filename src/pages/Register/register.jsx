@@ -12,7 +12,9 @@ function Register(){
     const [nick,setNick]=useState("")
     const [buttonChk,setButtonChk]=useState(true)
     const [buttonChk2,setButtonChk2]=useState(true)
+    const [buttonChk3,setButtonChk3]=useState(true)
     const[emailValid,setEmailValid]  = useState(false);
+    const[nickValid,setNickValid]  = useState(false);
     const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/
     const changeId=(e)=>{
         setId(e.target.value)
@@ -34,6 +36,8 @@ function Register(){
           console.log(error);
         }
     }
+
+    
     const changePw1=(e)=>{
         setPw1(e.target.value)
         if (passwordRegex.test(pw1)){
@@ -127,6 +131,23 @@ function Register(){
             console.error("Failed to update user:", error);
         });
     }
+    const changeNickname=async(e)=>{
+        const newNickname=e.target.value
+        setNick(newNickname)
+        try {
+            const response = await axios.post("/validation/nickname", { nickname: newNickname });
+          if(response.data==true){
+            setNickValid(true)
+            setButtonChk3(true)
+            }
+            else{
+                setNickValid(false)
+                setButtonChk3(false)
+            }
+        } catch (error) {
+          console.log(error);
+        }
+    }
     return(
         <div id={styles.wrapper}>
             <header id={styles.header}>회원가입</header>
@@ -150,9 +171,17 @@ function Register(){
                     </div>
                     <Form onInputChange={changePw1} spanName="비밀번호" placeholder="특수문자 제외 10자리 이상 입력해주세요." type="text"></Form>
                     <Form onInputChange={changePw2} spanName="비밀번호 확인" placeholder="비밀번호를 다시 입력해주세요" type="text"></Form>
-                    <Form onInputChange={changeNick} spanName="닉네임" placeholder="닉네임을 입력해주세요" type="text"></Form>
+                    <div id={styles.form}>
+                        <span >닉네임</span>
+                        <div id={styles.emailWrap}>
+                            <input onChange={changeNickname} id={styles.inputEmail} placeholder="닉네임을 입력해주세요"type="text" ></input>
+                            {nickValid&&nick.length>0&&(
+                                <div id={styles.emailCheck}>중복된 닉네임 입니다</div>  
+                            )}
+                        </div>
+                    </div>
                 </div>
-                <button onClick={registerBtn} type="button" disabled={buttonChk||buttonChk2} id={styles.registerBtn} >회원가입</button>
+                <button onClick={registerBtn} type="button" disabled={buttonChk||buttonChk2||buttonChk3} id={styles.registerBtn} >회원가입</button>
             </div>
         </div>
     )
