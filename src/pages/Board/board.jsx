@@ -108,7 +108,7 @@ export default function Board() {
           );
         })}
       </div>
-      <Navbar id={styles.nav}></Navbar>
+      <Navbar id={styles.nav} active={"/board"}></Navbar>
     </div>
   );
 }

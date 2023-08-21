@@ -1,15 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./navbar.module.css";
 
-export default function Navbar() {
-  const [activeBg, setActiveBg] = useState("/grade");
+export default function Navbar({active}) {
   return (
     <div className={styles.navbar}>
       <div className={styles.left_plus}>
         <Link to={"/grade"}>
           <button
-            onClick={() => setActiveBg("/grade")}
             className={styles.btn_grade}
           >
             <svg
@@ -26,14 +24,13 @@ export default function Navbar() {
                 fill="black"
               />
             </svg>
-            {activeBg == "/grade" ? (
+            {active == "/grade" ? (
               <span className={styles.activebg}></span>
             ) : null}
           </button>
         </Link>
         <Link to={"/rank"}>
           <button
-            onClick={() => setActiveBg("/rank")}
             className={styles.btn_rank}
           >
             <svg
@@ -51,7 +48,7 @@ export default function Navbar() {
                 strokeLinejoin="round"
               />
             </svg>
-            {activeBg == "/rank" ? (
+            {active == "/rank" ? (
               <span className={styles.activebg}></span>
             ) : null}
           </button>
@@ -60,7 +57,6 @@ export default function Navbar() {
       <div className={styles.plus}>
         <Link to={"/cardupload"}>
           <button
-            onClick={() => setActiveBg("/cardupload")}
             className={styles.plus_btn}
           >
             <svg
@@ -91,7 +87,6 @@ export default function Navbar() {
       <div className={styles.right_plus}>
         <Link to={"/board"}>
           <button
-            onClick={() => setActiveBg("/board")}
             className={styles.btn_board}
           >
             <svg
@@ -125,14 +120,13 @@ export default function Navbar() {
                 strokeLinejoin="round"
               />
             </svg>
-            {activeBg == "/board" ? (
+            {active == "/board" ? (
               <span className={styles.activebg}></span>
             ) : null}
           </button>
         </Link>
         <Link to={"/profile"}>
           <button
-            onClick={() => setActiveBg("/profile")}
             className={styles.btn_profile}
           >
             <svg
@@ -149,7 +143,7 @@ export default function Navbar() {
                 fill="black"
               />
             </svg>
-            {activeBg == "/profile" ? (
+            {active == "/profile" ? (
               <span className={styles.activebg}></span>
             ) : null}
           </button>
