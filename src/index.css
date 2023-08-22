@@ -15,7 +15,7 @@
   --color-white: white;
   --color-black: black;
   --color-accent: #DE496E;
-  --color-secondary: #F8DBE2;
+  --color-secondary: #fdd9e1;
   --color-background: #F2F2F2;
   --color-input-btn: #EEEEEE;
   --color-input-text: #C7C7C7;
@@ -28,5 +28,6 @@
   --font-size-footer-icons: 24px;
   --font-size-footer-plus: 40px;
   --font-size-card-icons: 30px;
-  /* --font-size-default: 24px; */
+  --font-size-default-icons: 24px;
+  --font-size-card-text: 20px;
 }
