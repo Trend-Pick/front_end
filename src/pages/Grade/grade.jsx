@@ -15,8 +15,7 @@ export default function Grade() {
       .then((res) => {
         setCardData(res.data);
       })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
+      .catch(() => {
         setCardData([]);
       });
   };
@@ -41,7 +40,7 @@ export default function Grade() {
         text={"스타일을 평가해보세요!"}
       ></Header>
       <div className={styles.card_container}>
-        {cardData === [] ? (
+        {cardData.length === 0 ? (
           <Card type={"NONE"}></Card>
         ) : (
           <Card
