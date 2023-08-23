@@ -48,7 +48,7 @@ export default function Card(props) {
           <div className={styles.profile_info}>
             <h3>{cardData.nickname}</h3>
             <div className={styles.profile_text}>
-              <FaHeart className={styles.profile_icon} />
+              <FaHeart className={styles.profile_heart_icon} />
               <p>{cardData.like}</p>
             </div>
           </div>
@@ -58,9 +58,9 @@ export default function Card(props) {
   } else if (type == "MYPAGE") {
     return (
       <div className={styles.modal}>
-        <img src={cardData.picture_url} className={styles.card_img}></img>
+        <img src={cardData.picture_Url} className={styles.card_img}></img>
         <div className={styles.profile_modal}>
-          <img src={cardData.member_img} className={styles.profile_img} />
+          <img src={cardData.profile_Img} className={styles.profile_img} />
           <div className={styles.profile_info}>
             <h3>{cardData.nickname}</h3>
             <div className={styles.profile_text}>
