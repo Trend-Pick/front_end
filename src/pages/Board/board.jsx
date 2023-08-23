@@ -21,7 +21,7 @@ export default function Board() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentTime(new Date());
-    }, 100000);
+    }, 1000);
 
     return () => clearInterval(timer);
   }, []);
