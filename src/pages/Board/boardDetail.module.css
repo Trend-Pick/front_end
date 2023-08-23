@@ -8,11 +8,12 @@
     width: 100%;
 }
 
+
 #wrapper2{
-    margin-top: 80px;
     height:95%;
     width: 95%;
     overflow: scroll;
+    
 }
 
 #boardDetail{
