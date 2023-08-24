@@ -29,6 +29,8 @@
   --font-size-footer-icons: 24px;
   --font-size-footer-plus: 40px;
   --font-size-card-icons: 30px;
-  --font-size-default-icons: 24px;
   --font-size-card-text: 20px;
+  --font-size-default-icons: 24px;
+  --font-size-post-title : 20px;
+  --font-size-post-text : 12px;
 }
