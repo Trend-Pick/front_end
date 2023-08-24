@@ -113,7 +113,10 @@ function BoardDetail(){
                         <div>{board.title}</div>   
                     </div>
                     <div id={styles.etc}>
-                        <div id={styles.nick}>{board.user_nickname} {new Date(board.time).getFullYear()}년 {new Date(board.time).getMonth()}월 {new Date(board.time).getDay()}일 {new Date(board.time).getHours()}시</div>
+                        {board.updateTime===null?
+                        <div id={styles.nick}>{board.user_nickname} {new Date(board.time).getFullYear()}년 {new Date(board.time).getMonth()}월 {new Date(board.time).getDay()}일 {new Date(board.time).getHours()}시</div>:
+                        <div id={styles.nick}>{board.user_nickname} {new Date(board.updateTime).getFullYear()}년 {new Date(board.updateTime).getMonth()}월 {new Date(board.updateTime).getDay()}일 {new Date(board.updateTime).getHours()}시 (수정됨)</div>
+                        }
                         {board.member_user_id===sessionStorage.getItem("id")?<div id={styles.edit} ><Link to={`/boardEdit?id=${idx}`} id={styles.boardEditBtn}>수정</Link> | <div onClick={boardDelete}>삭제</div></div>:null}
                         
                     </div>
@@ -131,7 +134,7 @@ function BoardDetail(){
                                 <div id={styles.replyWriter}>{item.writer}</div>
                                 <div id={styles.etc2}>
                                     <div id={styles.date}>{new Date(item.time).getFullYear()}년 {new Date(item.time).getMonth()}월 {new Date(item.time).getDay()}일 {new Date(item.time).getHours()}시</div>
-                                    {board.member_user_id===sessionStorage.getItem("id")?<div id={styles.delete} onClick={() => replyDelete(item.id)}>삭제</div>:null }
+                                    {item.user_user_id==sessionStorage.getItem("id")?<div id={styles.delete} onClick={() => replyDelete(item.id)}>삭제</div>:null }
                                                               
                                 </div>
                                 <div id={styles.reply}>{item.content}</div>

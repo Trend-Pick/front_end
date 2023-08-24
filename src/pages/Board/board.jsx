@@ -29,6 +29,23 @@ export default function Board() {
   const goWrite=()=>{
     window.location.href="/BoardWrite"
   }
+
+  const time=(e)=>{
+    const timeDifference = currentTime - new Date(e.postTime).getTime();
+const minutesDifference = Math.floor(timeDifference / (1000 * 60));
+const hoursDifference = Math.floor(timeDifference / (1000 * 60 * 60));
+const daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+
+if(minutesDifference<1){
+  return("방금전")
+}else if (minutesDifference < 60) {
+  return(`${minutesDifference}분전`);
+} else if (hoursDifference < 24) {
+  return(`${hoursDifference}시간전`);
+} else {
+  return(`${daysDifference}일전`);
+}
+  }
   return (
     <div className={styles.board}>
       <Header
@@ -50,19 +67,7 @@ export default function Board() {
                     <div id={styles.title}>{item.title}</div>
                   </Link>
                   <span id={styles.date1}>
-                    {item.user_nickname}/
-                    {Math.floor((currentTime - new Date(item.postTime).getTime()) / (1000 * 60)) < 60
-                      ? Math.floor((currentTime - new Date(item.postTime).getTime()) / (1000 * 60)) +
-                        "분전"
-                      : 360 >
-                        Math.floor((currentTime - new Date(item.postTime).getTime()) / (1000 * 60)) >=
-                        60
-                      ? Math.floor(
-                          (currentTime - new Date(item.postTime).getTime()) / (1000 * 60 * 60)
-                        ) + "시간전"
-                      : Math.floor(
-                          (currentTime - new Date(item.postTime).getTime()) / (1000 * 60 * 60 * 24)
-                        ) + "일전"}
+                    {item.user_nickname}/{time(item)}
                   </span>
                   <div id={styles.content1}>
                     {item.content.length > 45
@@ -80,18 +85,7 @@ export default function Board() {
                       <div id={styles.title}>{item.title}</div>
                     </Link>
                     <span id={styles.date1}>
-                      {item.user_nickname}/
-                      {Math.floor((currentTime - new Date(item.postTime).getTime()) / (1000 * 60)) < 60
-                        ? Math.floor((currentTime - new Date(item.postTime).getTime()) / (1000 * 60)) +
-                          "분전"
-                        : Math.floor((currentTime - new Date(item.postTime).getTime()) / (1000 * 60)) >=
-                          60
-                        ? Math.floor(
-                            (currentTime - new Date(item.postTime).getTime()) / (1000 * 60 * 60)
-                          ) + "시간전"
-                        : Math.floor(
-                            (currentTime - new Date(item.postTime).getTime()) / (1000 * 60 * 60 * 1024)
-                          ) + "일전"}
+                      {item.user_nickname}/{time(item)}
                     </span>
                     <div id={styles.content1}>
                       {item.content.length > 20
