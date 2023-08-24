@@ -22,26 +22,26 @@ import CardUpload from "./pages/CardUpload/cardUpload";
 import { AnimatePresence } from 'framer-motion';
 import { motion } from "framer-motion";
 import axios from "axios";
+
+const instance = axios.create();
+
+// Axios 인터셉터 설정
+instance.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    if (error.message === 'Network Error') {
+      window.location.href = "/";
+    }
+    return Promise.reject(error);
+  }
+);
 export default function App() {
   let vh = 0;
 
-
-  useEffect(() => {
-    const instance = axios.create();
-
-    instance.interceptors.response.use(
-      (response) => response,
-      (error) => {
-        if (error.response && error.response.status === 401) {
-          window.location.href = '/';
-        }
-        return Promise.reject(error);
-      }
-    );
-  }, []);
   useEffect(() => {
     vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty("--vh", `${vh}px`);
+    
   }, []);
   return (
     

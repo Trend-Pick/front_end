@@ -113,11 +113,12 @@ function BoardDetail(){
                         <div>{board.title}</div>   
                     </div>
                     <div id={styles.etc}>
-                        {board.updateTime===null?
+                        {new Date(board.time).getFullYear()+new Date(board.time).getMonth()+new Date(board.time).getDay()+new Date(board.time).getHours()+new Date(board.time).getMinutes()+new Date(board.time).getSeconds()
+                        ===new Date(board.updateTime).getFullYear()+new Date(board.updateTime).getMonth()+new Date(board.updateTime).getDay()+new Date(board.updateTime).getHours()+new Date(board.updateTime).getMinutes()+new Date(board.updateTime).getSeconds()?
                         <div id={styles.nick}>{board.user_nickname} {new Date(board.time).getFullYear()}년 {new Date(board.time).getMonth()}월 {new Date(board.time).getDay()}일 {new Date(board.time).getHours()}시</div>:
                         <div id={styles.nick}>{board.user_nickname} {new Date(board.updateTime).getFullYear()}년 {new Date(board.updateTime).getMonth()}월 {new Date(board.updateTime).getDay()}일 {new Date(board.updateTime).getHours()}시 (수정됨)</div>
                         }
-                        {board.member_user_id===sessionStorage.getItem("id")?<div id={styles.edit} ><Link to={`/boardEdit?id=${idx}`} id={styles.boardEditBtn}>수정</Link> | <div onClick={boardDelete}>삭제</div></div>:null}
+                        {board.user_id===sessionStorage.getItem("id")?<div id={styles.edit} ><Link to={`/boardEdit?id=${idx}`} id={styles.boardEditBtn}>수정</Link> | <div onClick={boardDelete}>삭제</div></div>:null}
                         
                     </div>
                     {board.postImgUrl==null?null:<div id={styles.boardImage}><img src={board.postImgUrl}></img></div>}
