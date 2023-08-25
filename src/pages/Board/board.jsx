@@ -12,10 +12,13 @@ export default function Board() {
 
   useEffect(() => {
     axios.get("/post_list")
-      .then((response) => {
-      console.log(response.data);
-      setBoardList(response.data);
-    });
+  .then((response) => {
+    console.log(response.data);
+    setBoardList(response.data); 
+  })
+  .catch((err) => {
+    console.log(err);
+  });
   }, []);
 
   useEffect(() => {

@@ -8,6 +8,7 @@ function Write(){
     const [title,setTitle]=useState("")
     const [content,setContent]=useState("")
     const [image,setImage]=useState("")
+    
     const onChangeTitle=(e)=>{
         setTitle(e.target.value)
     }

@@ -25,7 +25,7 @@ function BoardDetail(){
 
               setReplyList(response.data.commentList)
             } catch (error) {
-              console.error(error); 
+                console.error(error); 
             }
           };
           Data();
