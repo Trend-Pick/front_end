@@ -26,22 +26,22 @@ import axios from "axios";
 
 
 export default function App() {
-  // useEffect(() => {
-  //   if(window.location.pathname!="/"&&window.location.pathname!="/Register"){
-  //     axios.get("/errorPage")
-  //   .then((response)=>{
-  //       console.log(response)
-  //   })
-  //   .catch((err)=>{
-  //     console.log(err.message)
-  //     if(err.message=='Network Error'){
-  //       sessionStorage.removeItem("id")
-  //       alert("로그인이 만료되었습니다.")
-  //       window.location.href="/"
-  //     }
-  //   })
-  //   }
-  // }, []);
+  useEffect(() => {
+    if(window.location.pathname!="/"&&window.location.pathname!="/Register"){
+      axios.get("/errorPage")
+    .then((response)=>{
+        console.log(response)
+    })
+    .catch((err)=>{
+      console.log(err.message)
+      if(err.message=='Network Error'){
+        sessionStorage.removeItem("id")
+        alert("로그인이 만료되었습니다.")
+        window.location.href="/"
+      }
+    })
+    }
+  }, []);
   let vh = 0;
 
   useEffect(() => {
