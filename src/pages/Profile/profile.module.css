@@ -19,8 +19,9 @@
   height: 210px;
   margin-bottom: 22%;
   position: sticky;
+  padding-top: 30px;
   background-color: var(--color-background);
-  top: 80px;
+  top: 50px;
 }
 
 .profile_info_bg {
@@ -53,7 +54,6 @@
   width: 90px;
   height: 90px;
   cursor: pointer;
-  background-color: black;
   border-radius: 50%;
   border-style: none;
 }
@@ -112,8 +112,12 @@
   gap: 20px 0px;
   justify-items: center;
   align-items: center;
+  padding-bottom: 80px;
 }
 
+.profile_main_post{
+  padding-bottom: 80px;
+}
 
 .gallery_img {
   width: inherit;
@@ -122,5 +126,6 @@
 }
 
 .modal{
+  
   z-index: 100;
 }

@@ -1,22 +1,18 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../../components/Header/header";
 import Navbar from "../../components/Navbar/navbar";
-import Card from "../../components/Card/card";
-import Post from "../../components/Post/post";
+import Card from "../../components/Card";
+import Post from "../../components/Post";
 import styles from "./profile.module.css";
 import { FiSettings, FiImage, FiBookOpen } from "react-icons/fi";
 import axios from "axios";
 
 export default function Profile() {
   const [currentSeleted, setCurrentSelected] = useState("GALLERY");
-  const [profileImg, setProfileImg] = useState(
-    require("../../img/blank-profile.jpg")
-  );
+  const [profileImg, setProfileImg] = useState("/img/blank-profile.jpg");
 
-  // const [gallery, setGallery] = useState([]);
-  // const [post, setPost] = useState([]);
-  const [gallery, setGallery] = useState([1, 2, 3, 4, 5])
-  const [post, setPost] = useState([1, 2, 3, 4, 5]);
+  const [gallery, setGallery] = useState([]);
+  const [post, setPost] = useState([]);
 
   const [modalOpen, setModalOpen] = useState(null);
 
@@ -24,34 +20,9 @@ export default function Profile() {
   useEffect(() => {
     axios
       .get("/update/member/picture")
-      .then((res) => setProfileImg(res.data.imgUrl))
-      .catch(setProfileImg(require("../../img/blank-profile.jpg")));
-    axios
-      .get("/my_page")
-      .then((res) => setGallery(res.data))
-      .catch(setGallery([]));
-    axios
-      .get("/my_page/post")
-      .then((res) => setPost(res.data))
-      .catch(function (error) {
-        if (error.response) {
-          // 요청이 전송되었고, 서버는 2xx 외의 상태 코드로 응답했습니다.
-          console.log(error.response.data, 1);
-          console.log(error.response.status, 2);
-          console.log(error.response.headers, 3);
-        } else if (error.request) {
-          // 요청이 전송되었지만, 응답이 수신되지 않았습니다.
-          // 'error.request'는 브라우저에서 XMLHtpRequest 인스턴스이고,
-          // node.js에서는 http.ClientRequest 인스턴스입니다.
-          console.log(error.request);
-        } else {
-          // 오류가 발생한 요청을 설정하는 동안 문제가 발생했습니다.
-          console.log("Error", error.message);
-        }
-        console.log(error.config);
-      });
-
-    // .catch(setPost([]));
+      .then((res) => setProfileImg(res.data.imgUrl));
+    axios.get("/my_page").then((res) => setGallery(res.data));
+    axios.get("/my_page/post").then((res) => setPost(res.data));
   }, []);
 
   //  프로필사진 변경 함수
@@ -98,25 +69,6 @@ export default function Profile() {
         .then(() => {
           setModalOpen(null);
         })
-
-        .catch(function (error) {
-          if (error.response) {
-            // 요청이 전송되었고, 서버는 2xx 외의 상태 코드로 응답했습니다.
-            console.log(error.response.data, 1);
-            console.log(error.response.status, 2);
-            console.log(error.response.headers, 3);
-          } else if (error.request) {
-            // 요청이 전송되었지만, 응답이 수신되지 않았습니다.
-            // 'error.request'는 브라우저에서 XMLHtpRequest 인스턴스이고,
-            // node.js에서는 http.ClientRequest 인스턴스입니다.
-            console.log(error.request, 4);
-          } else {
-            // 오류가 발생한 요청을 설정하는 동안 문제가 발생했습니다.
-            console.log("Error", error.message);
-          }
-          console.log(error.config);
-        })
-
         .finally(alert("삭제완료"));
     }
   };
@@ -132,6 +84,7 @@ export default function Profile() {
                 width: "inherit",
                 filter: "blur(5px)",
                 zIndex: 10,
+                overflow: "hidden",
               }
             : null
         }
@@ -147,6 +100,7 @@ export default function Profile() {
           <div className={styles.profile_info_bg} src={gallery}></div>
           <div className={styles.profile_img_container}>
             <img
+              alt="profile"
               className={styles.profile_img}
               onClick={modalOpen ? null : (e) => handleImageChange(e)}
               src={profileImg}
@@ -164,9 +118,9 @@ export default function Profile() {
               onClick={() => setCurrentSelected("GALLERY")}
             >
               <FiImage
-                color={currentSeleted == "GALLERY" ? "#DE496E" : "black"}
+                color={currentSeleted === "GALLERY" ? "#DE496E" : "black"}
               />
-              {currentSeleted == "GALLERY" ? (
+              {currentSeleted === "GALLERY" ? (
                 <span className={styles.active_bg}></span>
               ) : null}
             </button>
@@ -175,40 +129,36 @@ export default function Profile() {
               onClick={() => setCurrentSelected("POSTS")}
             >
               <FiBookOpen
-                color={currentSeleted == "POSTS" ? "#DE496E" : "black"}
+                color={currentSeleted === "POSTS" ? "#DE496E" : "black"}
               />
-              {currentSeleted == "POSTS" ? (
+              {currentSeleted === "POSTS" ? (
                 <span className={styles.active_bg}></span>
               ) : null}
             </button>
           </div>
           <h4 className={styles.nickname}>{gallery.nickname}</h4>
         </div>
-        
 
-        {currentSeleted == "GALLERY" ? (
+        {currentSeleted === "GALLERY" ? (
           <div className={styles.profile_main_gallery}>
-            {gallery.pictures != undefined
-              ? gallery.pictures.map((img, index) => (
-                  <img
-                    src={img.url}
-                    className={styles.gallery_img}
-                    onClick={
-                      modalOpen == null ? () => handleClickGallery(index) : null
-                    }
-                    key={index}
-                  ></img>
-                ))
-              : null}
+            {gallery.pictures?.map((img, index) => (
+              <img
+                alt=""
+                src={img.url}
+                className={styles.gallery_img}
+                onClick={
+                  modalOpen === null ? () => handleClickGallery(index) : null
+                }
+                key={index}
+              ></img>
+            ))}
           </div>
         ) : (
           // 포스트
           <div className={styles.profile_main_post}>
-            {post.postlist != undefined
-              ? post.postlist.map((postlist, index) => <Post postData={postlist} nickname={post.nickname}  >
-
-              </Post>)
-              : null}
+            {post.postlist?.map((postlist) => (
+              <Post postData={postlist} nickname={post.nickname}></Post>
+            ))}
           </div>
         )}
       </div>
