@@ -1,0 +1,37 @@
+@media (min-width: 400px) {
+  #root {
+    width: 400px;
+  }
+}
+
+@media (max-width: 400px) {
+  #root {
+    width:100vw;
+    /* height: calc(var(--vh, 1vh) * 100); */
+  }
+}
+
+:root {
+  /* color code */
+  --color-white: white;
+  --color-black: black;
+  --color-accent: #DE496E;
+  --color-secondary: #fdd9e1;
+  --color-background: #F2F2F2;
+  --color-input-btn: #EEEEEE;
+  --color-input-text: #C7C7C7;
+  --color-text: #707070;
+  --color-shadow: rgba(0, 0, 0, 0.20);
+
+  /* font size */
+  --font-size-header-title: 26px;
+  --font-size-header-text: 16px;
+  --font-size-footer-icons: 24px;
+  --font-size-footer-plus: 40px;
+  --font-size-card-icons: 30px;
+  --font-size-card-text: 20px;
+  --font-size-default-icons: 24px;
+  --font-size-post-title : 16px;
+  --font-size-post-time : 12px;
+  --font-size-post-text : 14px;
+}

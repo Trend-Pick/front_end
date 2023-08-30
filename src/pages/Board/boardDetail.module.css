@@ -1,0 +1,146 @@
+#wrapper{
+    background-color: rgb(233, 231, 231);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+
+#wrapper2{
+    height:95%;
+    width: 95%;
+    overflow: scroll;
+    
+}
+
+#boardDetail{
+    width: 100%;
+    background-color: white;
+    margin-top: 10px;
+    border-radius: 20px;
+}
+
+#writeReply{
+    height: 10vh;
+    background-color: white;
+    border-top: 2px solid lightgrey;
+    width: inherit;
+    padding-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+#replyInput{
+    width: 90%;
+    height: 40px;
+}
+
+
+#send{
+    position: absolute;
+    right: 7%;
+    width: 5%;
+    height: 30px;
+    margin-bottom: 5px;
+    background-color: rgb(233, 231, 231);;
+}
+
+#title{
+    font-size: 20px;
+    height: auto;
+    font-weight: bold;
+    width: 100%;
+    word-wrap: break-word;
+    word-break:keep-all;
+}
+
+#title div{
+    padding: 20px 20px 10px 20px;
+}
+
+#etc{
+    display: flex;
+    padding: 0 20px 10px 20px;
+    font-size: 10px;
+}
+#nick{
+    width: 70%;
+}
+
+#edit{
+    width: 30%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#boardEditBtn{
+    text-decoration: none;
+    color: black;
+}
+
+#boardImage{
+    padding: 0px 20px 10px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+#boardImage img{
+    width: 300px;
+    height: 300px;
+}
+
+#content{
+    padding: 5px 20px 20px 20px;
+    word-wrap: break-word;
+    word-break:keep-all;
+}
+
+#replyWrapper{
+    margin-top: 30px;
+}
+
+#replyBox{
+    width: 100%;
+    background-color: white;
+    margin-top: 10px;
+    border-radius: 20px;
+}
+
+#replyWriter{
+    padding: 10px 20px 0px 20px;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+#etc2{
+    padding: 5px 20px 0px 20px;
+    font-size: 10px;
+    font-weight: 100;
+    display: flex;
+}
+
+#date{
+    width: 70%;
+}
+
+#delete{
+    width: 30%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#delete:hover{
+ cursor: pointer;
+}
+
+#reply{
+    padding: 10px 20px 10px 20px;
+    font-weight: 400;
+    font-size: 16px;
+}
+

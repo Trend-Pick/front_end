@@ -1,0 +1,61 @@
+html,body{
+    margin: 0;
+    padding: 0;
+}
+
+#wrapper{
+    background-color: white;
+}
+
+#logo{
+    height: 50vh;
+    background-color: antiquewhite;
+}
+
+#loginFormWrapper{
+    overflow: scroll;
+    height: 50vh;
+    text-align: center;
+}
+
+
+
+#loginForm{
+    margin-top: 5%;
+    margin-bottom: 7%;
+}
+
+
+
+
+
+#submit{
+    width: 90%;
+    height: 6vh;
+    border: none;
+    border-radius: 50px;
+    margin-top: 5vh;
+    background-color: rgb(248, 130, 148);
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5%;
+}
+
+#link{
+    margin-top: 5%;
+    cursor: pointer;
+}
+
+#register{
+    text-decoration: none;
+}
+
+#register:visited{
+    color:black
+}
+
+
