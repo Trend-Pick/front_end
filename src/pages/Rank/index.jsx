@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Header from "../../components/Header/header";
 import Navbar from "../../components/Navbar/navbar";
-import Card from "../../components/Card/card";
+import Card from "../../components/Card";
 import styles from "./rank.module.css";
-import axios from "axios";
+import { getRankingCard } from "../../apis/services/rank";
 import { AiFillCaretDown, AiFillCaretUp } from "react-icons/ai";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow } from "swiper/modules";
@@ -12,21 +12,28 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
+const now = new Date();
+
+const RankType = {
+  Monthly: "monthly",
+  Weekly: "weekly",
+  All: "pictures",
+};
+
+const RankText = {
+  [RankType.Monthly]: "월간랭킹",
+  [RankType.Weekly]: "주간랭킹",
+  [RankType.All]: "누적랭킹",
+};
+
 export default function Rank() {
-  const [currentRanking, setCurrentRanking] = useState("월간랭킹");
+  const [currentRanking, setCurrentRanking] = useState(RankType.Monthly);
   const [cardData, setCardData] = useState([]);
   const [toggle, setToggle] = useState(false);
-  const now = new Date();
 
   // 정렬 기준이 바뀔때마다 카드데이터 업데이트
   useEffect(() => {
-    if (currentRanking == "월간랭킹") {
-      axios.get("monthly_ranking").then((res) => setCardData(res.data));
-    } else if (currentRanking == "주간랭킹") {
-      axios.get("weekly_ranking").then((res) => setCardData(res.data));
-    } else {
-      axios.get("pictures_ranking").then((res) => setCardData(res.data));
-    }
+    getRankingCard(currentRanking).then((res) => setCardData(res.data));
   }, [currentRanking]);
 
   // 토글 상태 변경
@@ -36,7 +43,7 @@ export default function Rank() {
 
   // 현재 정렬기준 변경
   const handleChangeCurrentRanking = (data) => {
-    setCurrentRanking(data);
+    setCurrentRanking(RankType[data]);
     setToggle((prev) => !prev);
   };
 
@@ -44,11 +51,11 @@ export default function Rank() {
     <div className={styles.rank}>
       <Header
         type={"rank"}
-        title={currentRanking}
+        title={RankText[currentRanking]}
         text={
-          currentRanking == "월간랭킹"
+          currentRanking === RankType.Monthly
             ? `${now.getMonth() + 1}월 랭킹`
-            : currentRanking == "주간랭킹"
+            : currentRanking === RankType.Weekly
             ? `${now.getMonth() + 1}월 ${Math.floor(
                 now.getWeek() / (now.getMonth() + 1)
               )}째주 랭킹`
@@ -77,7 +84,7 @@ export default function Rank() {
           className={styles.swiper}
         >
           {cardData.map((card, index) => (
-            <SwiperSlide className={styles.card_container} key = {index}>
+            <SwiperSlide className={styles.card_container} key={index}>
               <Card
                 id={index}
                 type={"RANK"}
@@ -93,9 +100,8 @@ export default function Rank() {
   );
 }
 
-
 Date.prototype.getWeek = function (dowOffset) {
-  dowOffset = typeof dowOffset == "number" ? dowOffset : 0;
+  dowOffset = typeof dowOffset === "number" ? dowOffset : 0;
   var newYear = new Date(this.getFullYear(), 0, 1);
   var day = newYear.getDay() - dowOffset;
   day = day >= 0 ? day : day + 7;

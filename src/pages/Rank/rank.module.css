@@ -1,12 +1,10 @@
 .rank {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: inherit;
+width: inherit;
 }
 
 .rank_container {
-  width: 100%;
+  /* background-color: black; */
+  /* width: 100%; */
   height: 400px;
 }
 
