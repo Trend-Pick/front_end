@@ -7,7 +7,7 @@
 @media (max-width: 400px) {
   #root {
     width:100vw;
-    height: calc(var(--vh, 1vh) * 100);
+    /* height: calc(var(--vh, 1vh) * 100); */
   }
 }
 
@@ -31,6 +31,7 @@
   --font-size-card-icons: 30px;
   --font-size-card-text: 20px;
   --font-size-default-icons: 24px;
-  --font-size-post-title : 20px;
-  --font-size-post-text : 12px;
+  --font-size-post-title : 16px;
+  --font-size-post-time : 12px;
+  --font-size-post-text : 14px;
 }

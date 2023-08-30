@@ -19,7 +19,6 @@
 }
 
 @media (max-width: 400px) {
-
   .header_board,
   .header_board_write {
     width: 100vw;
@@ -30,7 +29,7 @@ header {
   display: flex;
   justify-content: center;
   position: fixed;
-  width: inherit;
+  width: 100vw;
   height: 60px;
   top: 0;
   padding: 16px 20px 16px 20px;
