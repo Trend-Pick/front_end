@@ -1,18 +1,25 @@
 import React from "react";
+import cx from "classnames";
 import styles from "./card.module.css";
 import { FaHeart, FaTrash } from "react-icons/fa";
 import { MdThumbUp, MdThumbDown } from "react-icons/md";
+
 import {
   TbRosetteNumber1,
   TbRosetteNumber2,
   TbRosetteNumber3,
 } from "react-icons/tb";
 
-export default function Card(props) {
-  const { type, handleGradeClick, handleDeleteGallery, cardData, id } = props;
-  if (type == "GRADE") {
+export default function Card({
+  type,
+  handleGradeClick,
+  handleDeleteGallery,
+  cardData,
+  id,
+}) {
+  if (type === "GRADE") {
     return (
-      <div className={styles.grade}>
+      <div className={styles.wrapper}>
         <img src={cardData.url} className={styles.card_img}></img>
         <div className={styles.grade_btn}>
           <button
@@ -30,15 +37,15 @@ export default function Card(props) {
         </div>
       </div>
     );
-  } else if (type == "RANK") {
+  } else if (type === "RANK") {
     return (
-      <div className={styles.rank}>
+      <div className={cx(styles.wrapper, styles.rank)}>
         <img src={cardData.imgUrl} className={styles.card_img}></img>
         <div className={styles.profile}>
           <h1 className={styles.profile_rank}>
-            {id == 0 ? (
+            {id === 0 ? (
               <TbRosetteNumber1 color="#D5A11E" />
-            ) : id == 1 ? (
+            ) : id === 1 ? (
               <TbRosetteNumber2 color="#A3A3A3" />
             ) : (
               <TbRosetteNumber3 color="#CD7F32" />
@@ -55,9 +62,9 @@ export default function Card(props) {
         </div>
       </div>
     );
-  } else if (type == "MYPAGE") {
+  } else if (type === "MYPAGE") {
     return (
-      <div className={styles.modal}>
+      <div className={cx(styles.wrapper, styles.modal)}>
         <img src={cardData.picture_Url} className={styles.card_img}></img>
         <div className={styles.profile_modal}>
           <img src={cardData.profile_Img} className={styles.profile_img} />
@@ -75,9 +82,9 @@ export default function Card(props) {
         </div>
       </div>
     );
-  } else if (type == "NONE") {
+  } else if (type === "NONE") {
     return (
-      <div className={styles.none}>
+      <div className={styles.wrapper}>
         <p>더 이상 평가할 사진이 없네요!</p>
         <p>사진이 등록될때까지 기다려 주세요</p>
         <p>☺️</p>

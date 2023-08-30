@@ -1,7 +1,4 @@
-.grade,
-.rank,
-.modal,
-.none {
+.wrapper, .rank {
   display: flex;
   flex-direction: column;
   justify-content: center;
