@@ -61,7 +61,7 @@ if(minutesDifference<1){
         {boardList.map((item,idx) => {
           return (
             <div id={styles.boardList} key={idx}>
-              {item.postImgUrl == null ? (
+              {item.postImgUrl === null ? (
                 <div>
                   <Link
                     to={"/boardDetail?idx=" + `${item.id}`}
