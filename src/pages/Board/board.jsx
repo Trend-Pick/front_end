@@ -34,7 +34,7 @@ export default function Board() {
   }
 
   const time=(e)=>{
-    const timeDifference = currentTime - new Date(e.postTime).getTime();
+  const timeDifference = currentTime - new Date(e.postTime).getTime()-9 * 60 * 60 * 1000;
 const minutesDifference = Math.floor(timeDifference / (1000 * 60));
 const hoursDifference = Math.floor(timeDifference / (1000 * 60 * 60));
 const daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
