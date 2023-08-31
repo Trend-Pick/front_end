@@ -86,6 +86,7 @@ export default function Header({
   } else if (type === "profile") {
     return (
       <header className={styles.header_profile}>
+        <h1 className={styles.title_profile}>마이페이지</h1>
         <h1 className={styles.icons_profile} onClick={handleBtnClick}>
           {buttons}
         </h1>
@@ -113,6 +114,12 @@ export default function Header({
         <h1 className={styles.icons_board_write} onClick={handleBtnClick}>
           {buttons[1]}
         </h1>
+      </header>
+    );
+  } else if (type === "register") {
+    return (
+      <header className={styles.header_register}>
+        <h1 className={styles.title_register}>회원가입</h1>
       </header>
     );
   }

@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import Header from "../../components/Header/header";
-import Navbar from "../../components/Navbar/navbar";
+import Header from "../../components/Header";
+import Navbar from "../../components/Navbar";
 import Card from "../../components/Card";
 import Post from "../../components/Post";
 import styles from "./profile.module.css";
 import { FiSettings, FiImage, FiBookOpen } from "react-icons/fi";
 import axios from "axios";
+import FindPw from "../findPw/findPw";
 
 export default function Profile() {
   const [currentSeleted, setCurrentSelected] = useState("GALLERY");
@@ -73,9 +74,17 @@ export default function Profile() {
     }
   };
 
+  const findPassword = () => {
+    console.log("비번찾기");
+  };
+
   return (
     <div className={styles.profile}>
-      <Header type={"profile"} buttons={<FiSettings />}></Header>
+      <Header
+        type={"profile"}
+        buttons={<FiSettings />}
+        handleBtnClick={findPassword}
+      ></Header>
       <div
         className={styles.profile_container}
         style={

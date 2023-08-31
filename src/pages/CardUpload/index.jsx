@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import styles from "./cardUpload.module.css";
-import Header from "../../components/Header/header";
-import Navbar from "../../components/Navbar/navbar";
+import Header from "../../components/Header";
+import Navbar from "../../components/Navbar";
 import { BsFileImage } from "react-icons/bs";
 import axios from "axios";
 
 export default function CardUpload() {
   const [currentImg, setCurrentImg] = useState(null);
   const [currentFile, setCurrentFile] = useState(null);
-
+  //
   //  이미지 체인지 함수
   const handleImageChange = () => {
     document.getElementById("InputImgFile").click();
@@ -40,7 +40,11 @@ export default function CardUpload() {
 
   return (
     <div className={styles.cardUpload}>
-      <Header type={"upload"} title={"사진 업로드"} text={"평가 받고 싶은 사진을 업로드 해보세요!"}></Header>
+      <Header
+        type={"upload"}
+        title={"사진 업로드"}
+        text={"평가 받고 싶은 사진을 업로드 해보세요!"}
+      ></Header>
       <div className={styles.outer}>
         <div
           className={styles.inner}
@@ -63,7 +67,7 @@ export default function CardUpload() {
           />
         </div>
         <button
-          onClick={currentImg? () => handleImageUpload() : null}
+          onClick={currentImg ? () => handleImageUpload() : null}
           className={styles.upload_btn}
           style={{ backgroundColor: currentImg ? "#DE496E" : "#fcd2db" }}
         >

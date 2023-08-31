@@ -1,10 +1,8 @@
-
 .board{
   display: flex;
   flex-direction: column;
   width: 100%;
   height: 100vh;
-  background-color: rgb(233, 231, 231);
 }
 
 #boardList{
@@ -22,7 +20,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: rgb(233, 231, 231);
+  background-color: var(--color-background);
   flex: 1;
   padding-bottom: 20vh;
 }
