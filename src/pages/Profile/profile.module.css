@@ -1,6 +1,17 @@
+@media (max-width: 400px) {
+  .profile {
+    width:100vw;
+  }
+}
+
+@media (min-width: 400px) {
+  .profile  {
+    width: 400px;
+  }
+}
+
 .profile {
   position: relative;
-  width: inherit;
   height: calc(100% - 150px);
   background-color: var(--color-background);
 }

@@ -1,13 +1,5 @@
 import React, { useEffect } from "react";
-import ReactDOM from "react-dom/client";
-import {
-  BrowserRouter,
-  Router,
-  Routes,
-  Route,
-  Link,
-  useParams,
-} from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Login from "./pages/Login/login";
 import Grade from "./pages/Grade";
@@ -26,8 +18,8 @@ import axios from "axios";
 export default function App() {
   useEffect(() => {
     if (
-      window.location.pathname != "/" &&
-      window.location.pathname != "/Register"
+      window.location.pathname !== "/" &&
+      window.location.pathname !== "/Register"
     ) {
       axios
         .get("/errorPage")
@@ -36,7 +28,7 @@ export default function App() {
         })
         .catch((err) => {
           console.log(err.message);
-          if (err.message == "Network Error") {
+          if (err.message === "Network Error") {
             sessionStorage.removeItem("id");
             alert("로그인이 만료되었습니다.");
             window.location.href = "/";
@@ -44,12 +36,13 @@ export default function App() {
         });
     }
   }, []);
-  let vh = 0;
 
   useEffect(() => {
+    let vh = 0;
     vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty("--vh", `${vh}px`);
   }, []);
+
   return (
     <React.StrictMode>
       <BrowserRouter>
