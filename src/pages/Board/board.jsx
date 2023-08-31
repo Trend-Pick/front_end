@@ -70,15 +70,15 @@ export default function Board() {
                     id={styles.Link}
                   >
                     <div id={styles.title}>{item.title}</div>
-                  </Link>
-                  <span id={styles.date1}>
-                    {item.user_nickname}{time(item)}
-                  </span>
+                    <div id={styles.date1}>
+                      <span>{item.user_nickname}</span>{time(item)}
+                    </div>
                   <div id={styles.content1}>
                     {item.content.length > 40
                       ? item.content.slice(0, 40) + "..."
                       : item.content}
                   </div>
+                  </Link>
                 </div>
               ) : (
                 <div id={styles.wrapper2}>
@@ -88,15 +88,16 @@ export default function Board() {
                       id={styles.Link}
                     >
                       <div id={styles.title}>{item.title}</div>
-                    </Link>
-                    <span id={styles.date1}>
-                      {item.user_nickname}{time(item)}
-                    </span>
+                    
+                    <div id={styles.date1}>
+                      <span>{item.user_nickname}</span>{time(item)}
+                    </div>
                     <div id={styles.content1}>
                       {item.content.length > 20
                         ? item.content.slice(0, 20) + "..."
                         : item.content}
                     </div>
+                    </Link>
                   </div>
                   <div id={styles.div2}>
                     <img src={item.postImgUrl}></img>

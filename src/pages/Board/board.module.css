@@ -41,8 +41,13 @@
 
 #date1{
   margin: 0 0 0 10px;
-  font-weight: 100;
   font-size: 0.7rem;
+}
+
+#date1 span{
+  margin-right: 5px;
+  margin-left: 3px;
+  font-weight: 100;
 }
 
 #content1{
@@ -51,8 +56,8 @@
   margin-left: 10px;
   margin-top: 10px;
   margin-bottom: 5px;
-  font-weight: 700;
-  font-size: 0.9rem;
+  font-weight: 550;
+  font-size: 0.8rem;
 }
 
 #wrapper2{
