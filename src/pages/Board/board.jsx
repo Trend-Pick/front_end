@@ -72,11 +72,11 @@ export default function Board() {
                     <div id={styles.title}>{item.title}</div>
                   </Link>
                   <span id={styles.date1}>
-                    {item.user_nickname}/{time(item)}
+                    {item.user_nickname}{time(item)}
                   </span>
                   <div id={styles.content1}>
-                    {item.content.length > 45
-                      ? item.content.slice(0, 45) + "..."
+                    {item.content.length > 40
+                      ? item.content.slice(0, 40) + "..."
                       : item.content}
                   </div>
                 </div>
@@ -90,7 +90,7 @@ export default function Board() {
                       <div id={styles.title}>{item.title}</div>
                     </Link>
                     <span id={styles.date1}>
-                      {item.user_nickname}/{time(item)}
+                      {item.user_nickname}{time(item)}
                     </span>
                     <div id={styles.content1}>
                       {item.content.length > 20
