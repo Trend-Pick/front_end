@@ -14,7 +14,7 @@ export default function Board() {
     axios.get("/post_list")
   .then((response) => {
     console.log(response.data);
-    setBoardList(response.data); 
+    setBoardList(response.data.reverse()); 
   })
   .catch((err) => {
     console.log(err);
