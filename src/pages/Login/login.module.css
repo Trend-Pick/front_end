@@ -9,7 +9,11 @@ html,body{
 
 #logo{
     height: 50vh;
-    background-color: antiquewhite;
+}
+
+#logoImg{
+    height: 100%;
+    width: 100%;
 }
 
 #loginFormWrapper{

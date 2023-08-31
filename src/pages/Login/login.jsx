@@ -55,8 +55,8 @@ function Login(){
     }
     return(
         <div id={styles.wrapper}>
-            <div id={styles.logo}>c
-                <img src="#" alt="로고사진"></img>
+            <div id={styles.logo}>
+                <img src="/img/logo.png" id={styles.logoImg} alt="로고사진"></img>
             </div>
             <div id={styles.loginFormWrapper}>
                 <div id={styles.loginForm}> 
