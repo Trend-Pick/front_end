@@ -43,13 +43,9 @@ header {
 
 .header_board,
 .header_rank,
-.header_board_write {
+.header_board_write,.header_profile {
   display: flex;
   justify-content: space-between;
-}
-
-.header_profile {
-  justify-content: flex-end;
 }
 
 .header_board_detail,
