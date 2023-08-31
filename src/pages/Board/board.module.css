@@ -23,6 +23,7 @@
   background-color: var(--color-background);
   flex: 1;
   padding-bottom: 20vh;
+  margin-top: 13vh;
 }
 
 #title{

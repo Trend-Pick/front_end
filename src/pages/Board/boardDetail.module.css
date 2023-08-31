@@ -13,7 +13,7 @@
     height:95%;
     width: 95%;
     overflow: scroll;
-    
+    margin-top: 12vh;
 }
 
 #boardDetail{

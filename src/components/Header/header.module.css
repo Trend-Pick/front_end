@@ -75,7 +75,3 @@ header>h1 {
   font-size: var(--font-size-header-text);
 }
 
-.header_board,
-.header_board_detail {
-  position: relative;
-}
