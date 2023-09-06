@@ -10,6 +10,7 @@ import {
   useNavigate,
 } from "react-router-dom";
 import { FiArrowLeft } from "react-icons/fi";
+import { PiPaperPlaneRightBold } from "react-icons/pi";
 
 function BoardDetail() {
   const location = useLocation();
@@ -148,8 +149,9 @@ function BoardDetail() {
               <div id={styles.edit}>
                 <Link to={`/boardEdit?id=${idx}`} id={styles.boardEditBtn}>
                   수정
-                </Link>{" "}
-                | <div onClick={boardDelete}>삭제</div>
+                </Link>
+                <p style={{ whiteSpace: "pre-wrap" }}> | </p>
+                <div onClick={boardDelete}>삭제</div>
               </div>
             ) : null}
           </div>
@@ -198,7 +200,11 @@ function BoardDetail() {
           onKeyDown={Enters}
           value={reply}
         />
-        <img onClick={send} id={styles.send} src="/img/send.png" />
+        <PiPaperPlaneRightBold
+          onClick={send}
+          id={styles.send}
+        ></PiPaperPlaneRightBold>
+        {/* <img onClick={send} id={styles.send} src='/img/send.png' /> */}
       </div>
     </div>
   );

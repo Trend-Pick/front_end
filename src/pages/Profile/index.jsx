@@ -59,18 +59,19 @@ export default function Profile() {
   };
 
   // 사진 삭제 함수
-  const handleDeleteGallery = (pidtureId) => {
+  const handleDeleteGallery = (pictureId) => {
     if (window.confirm("정말 삭제하시겠습니까 ?")) {
       axios
-        .delete("/delete_picture", {
+        .delete(`/delete_picture/${pictureId}`, {
           data: {
-            pidtureId,
+            pictureId,
           },
         })
         .then(() => {
           setModalOpen(null);
         })
         .finally(alert("삭제완료"));
+      axios.get("/my_page").then((res) => setGallery(res.data));
     }
   };
 
@@ -109,15 +110,15 @@ export default function Profile() {
           <div className={styles.profile_info_bg} src={gallery}></div>
           <div className={styles.profile_img_container}>
             <img
-              alt="profile"
+              alt='profile'
               className={styles.profile_img}
               onClick={modalOpen ? null : (e) => handleImageChange(e)}
               src={profileImg}
             ></img>
             <input
-              id="InputImgFile"
-              type="file"
-              accept="image/*"
+              id='InputImgFile'
+              type='file'
+              accept='image/*'
               style={{ display: "none" }}
             />
           </div>
@@ -152,7 +153,7 @@ export default function Profile() {
           <div className={styles.profile_main_gallery}>
             {gallery.pictures?.map((img, index) => (
               <img
-                alt=""
+                alt=''
                 src={img.url}
                 className={styles.gallery_img}
                 onClick={
@@ -176,7 +177,7 @@ export default function Profile() {
       {modalOpen != null ? (
         <div className={styles.modal}>
           <Card
-            type="MYPAGE"
+            type='MYPAGE'
             cardData={modalOpen}
             handleDeleteGallery={() =>
               handleDeleteGallery(modalOpen.picture_Id)
