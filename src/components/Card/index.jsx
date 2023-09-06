@@ -44,14 +44,21 @@ export default function Card({
         <div className={styles.profile}>
           <h1 className={styles.profile_rank}>
             {id === 0 ? (
-              <TbRosetteNumber1 color="#D5A11E" />
+              <TbRosetteNumber1 color='#D5A11E' />
             ) : id === 1 ? (
-              <TbRosetteNumber2 color="#A3A3A3" />
+              <TbRosetteNumber2 color='#A3A3A3' />
             ) : (
-              <TbRosetteNumber3 color="#CD7F32" />
+              <TbRosetteNumber3 color='#CD7F32' />
             )}
           </h1>
-          <img src={cardData.member_img} className={styles.profile_img} />
+          <img
+            src={
+              cardData.member_img
+                ? cardData.member_img
+                : "/img/blank-profile.jpg"
+            }
+            className={styles.profile_img}
+          />
           <div className={styles.profile_info}>
             <h3>{cardData.nickname}</h3>
             <div className={styles.profile_text}>
