@@ -3,6 +3,7 @@ import Header from "../../components/Header";
 import Navbar from "../../components/Navbar";
 import Card from "../../components/Card";
 import styles from "./rank.module.css";
+import getWeekNumber from "../../apis/utils/getWeekNumber";
 import { getRankingCard } from "../../apis/services/rank";
 import { AiFillCaretDown, AiFillCaretUp } from "react-icons/ai";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -56,9 +57,8 @@ export default function Rank() {
           currentRanking === RankType.Monthly
             ? `${now.getMonth() + 1}월 랭킹`
             : currentRanking === RankType.Weekly
-            ? `${now.getMonth() + 1}월 ${Math.floor(
-                now.getWeek() / (now.getMonth() + 1)
-              )}째주 랭킹`
+            ? `${now.getMonth() + 1}월 
+            ${getWeekNumber()}째주 랭킹`
             : "누적랭킹을 확인하세요!"
         }
         buttons={[<AiFillCaretUp />, <AiFillCaretDown />]}
