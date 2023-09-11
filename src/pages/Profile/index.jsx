@@ -16,6 +16,7 @@ export default function Profile() {
   const [post, setPost] = useState([]);
 
   const [modalOpen, setModalOpen] = useState(null);
+  const [findPassWord, setFindPassWord] = useState(false);
 
   // 데이터 받아오기
   useEffect(() => {
@@ -76,7 +77,7 @@ export default function Profile() {
   };
 
   const findPassword = () => {
-    console.log("비번찾기");
+    setFindPassWord(true);
   };
 
   return (
@@ -86,6 +87,7 @@ export default function Profile() {
         buttons={<FiSettings />}
         handleBtnClick={findPassword}
       ></Header>
+      {findPassWord && <FindPw setModalOpen={setFindPassWord} />}
       <div
         className={styles.profile_container}
         style={
