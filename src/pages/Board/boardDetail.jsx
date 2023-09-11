@@ -42,10 +42,14 @@ function BoardDetail() {
       content: reply,
     };
     try {
-      const response = await axios.post(`/create/${idx}/comment`, updateReply);
-
-      setCounter(!counter);
-      setReply("");
+      if(reply==""){
+        alert("댓글을 입력해주세요")
+      }
+      else{
+        await axios.post(`/create/${idx}/comment`, updateReply);
+        setCounter(!counter);
+        setReply("");
+      }
     } catch (error) {
       console.log(error);
     }
