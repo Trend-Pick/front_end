@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import styles from "./register.module.css";
 import Header from "../../components/Header";
 import Form from "../../components/Form/form";
@@ -39,14 +39,17 @@ function Register() {
     }
   };
 
+  useEffect(() => {
+    if (passwordRegex.test(pw1)) {
+      setBool(true);
+    } else {
+      setBool(false);
+    }
+  }, [pw1]);
+
   const changePw1 = (e) => {
-    setPw1(e.target.value, () => {
-      if (passwordRegex.test(pw1)) {
-        setBool(true);
-      } else {
-        setBool(false);
-      }
-    });
+    
+    setPw1(e.target.value);
   };
   const changePw2 = (e) => {
     setPw2(e.target.value);
