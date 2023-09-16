@@ -16,7 +16,7 @@ function Register() {
   const [buttonChk3, setButtonChk3] = useState(true);
   const [emailValid, setEmailValid] = useState(false);
   const [nickValid, setNickValid] = useState(false);
-  const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+  const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
   const changeId = (e) => {
     setId(e.target.value);
   };
@@ -100,7 +100,7 @@ function Register() {
       return;
     }
     if (!bool) {
-      alert("8자이상 숫자 영문 특수문자를 포함해주세요");
+      alert("영문 숫자 특수기호 조합 8자리 이상");
       return;
     }
     if (pw1 != pw2) {
@@ -185,7 +185,7 @@ function Register() {
           <Form
             onInputChange={changePw1}
             spanName="비밀번호"
-            placeholder="특수문자 제외 10자리 이상 입력해주세요."
+            placeholder="영문 숫자 특수기호 조합 8자리 이상입력해주세요."
             type="text"
           ></Form>
           <Form
