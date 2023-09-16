@@ -15,9 +15,14 @@ export default function Grade() {
 
   // 사진 받아오는 함수
   const fetchData = useCallback(() => {
-    getGradeCard().then((res) => {
-      setCardData(res.data);
-    });
+    getGradeCard()
+      .then((res) => {
+        setCardData(res.data);
+      })
+      .catch((error) => {
+        console.error(error);
+        setCardData([]);
+      });
   }, []);
 
   // 점수주기
@@ -34,20 +39,20 @@ export default function Grade() {
 
   return (
     <div className={styles.grade}>
-      <Header type="grade" title="스타일 평가" text="스타일을 평가해보세요!" />
+      <Header type='grade' title='스타일 평가' text='스타일을 평가해보세요!' />
       <div className={styles.card_container}>
         {cardData.length === 0 ? (
-          <Card type="NONE" />
+          <Card type='NONE' />
         ) : (
           <Card
-            type="GRADE"
+            type='GRADE'
             key={cardData.id}
             cardData={cardData}
             handleGradeClick={handleGradeClick}
           />
         )}
       </div>
-      <Navbar active="/grade" />
+      <Navbar active='/grade' />
     </div>
   );
 }
