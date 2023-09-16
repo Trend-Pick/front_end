@@ -40,12 +40,13 @@ function Register() {
   };
 
   const changePw1 = (e) => {
-    setPw1(e.target.value);
-    if (passwordRegex.test(pw1)) {
-      setBool(true);
-    } else {
-      setBool(false);
-    }
+    setPw1(e.target.value, () => {
+      if (passwordRegex.test(pw1)) {
+        setBool(true);
+      } else {
+        setBool(false);
+      }
+    });
   };
   const changePw2 = (e) => {
     setPw2(e.target.value);
