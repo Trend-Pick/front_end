@@ -15,7 +15,7 @@ export default function Board() {
       .get("/post_list")
       .then((response) => {
         console.log(response.data);
-        setBoardList(response.data.reverse());
+        setBoardList(response.data);
       })
       .catch((err) => {
         console.log(err);
