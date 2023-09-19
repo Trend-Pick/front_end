@@ -22,7 +22,11 @@ export default function Profile() {
   useEffect(() => {
     axios
       .get("/update/member/picture")
-      .then((res) => setProfileImg(res.data.imgUrl));
+      .then((res) =>
+        setProfileImg(
+          res.data.imgUrl === null ? "/img/blank-profile.jpg" : res.data.imgUrl
+        )
+      );
     axios.get("/my_page").then((res) => setGallery(res.data));
     axios.get("/my_page/post").then((res) => setPost(res.data));
   }, []);
@@ -37,12 +41,13 @@ export default function Profile() {
         const formData = new FormData();
         formData.append("newImg", file);
         axios
-          .put("/update/member/picture", formData, {
+          .patch("/update/member/picture", formData, {
             headers: {
               "Content-Type": "multipart/form-data",
             },
           })
-          .finally(alert("등록이 완료되었습니다🎉"));
+          .then(alert("등록이 완료되었습니다🎉"))
+          .then(setProfileImg(window.URL.createObjectURL(e.target.files[0])));
       }
     });
   };
@@ -71,7 +76,7 @@ export default function Profile() {
         .then(() => {
           setModalOpen(null);
         })
-        .finally(alert("삭제완료"));
+        .then(alert("삭제완료"));
       axios.get("/my_page").then((res) => setGallery(res.data));
     }
   };

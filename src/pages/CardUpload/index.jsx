@@ -60,9 +60,9 @@ export default function CardUpload() {
           )}
           {currentImg ? null : <p>Selecting Image</p>}
           <input
-            id="InputImgFile"
-            type="file"
-            accept="image/*"
+            id='InputImgFile'
+            type='file'
+            accept='image/*'
             style={{ display: "none" }}
           />
         </div>
