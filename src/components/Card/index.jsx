@@ -40,7 +40,7 @@ export default function Card({
   } else if (type === "RANK") {
     return (
       <div className={cx(styles.wrapper, styles.rank)}>
-        <img src={cardData.imgUrl} className={styles.card_img}></img>
+        <img src={cardData.imgUrl} className={styles.card_img} />
         <div className={styles.profile}>
           <h1 className={styles.profile_rank}>
             {id === 0 ? (
@@ -72,7 +72,10 @@ export default function Card({
   } else if (type === "MYPAGE") {
     return (
       <div className={cx(styles.wrapper, styles.modal)}>
-        <img src={cardData.picture_Url} className={styles.card_img}></img>
+        <img
+          src={cardData.picture_Url}
+          className={cx(styles.card_img, styles.modal_picture)}
+        ></img>
         <div className={styles.profile_modal}>
           <img src={cardData.profile_Img} className={styles.profile_img} />
           <div className={styles.profile_info}>
