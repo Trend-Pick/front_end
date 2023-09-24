@@ -42,7 +42,10 @@ function BoardEdit() {
           type: "application/json",
         })
       );
-      formData.append("imgInPost", image);
+      if(image!="string"){
+        alert("d")
+        formData.append("imgInPost", image);
+      }
     }
     try {
       const response = await axios.patch(`/update_post/${id}`, formData, {
