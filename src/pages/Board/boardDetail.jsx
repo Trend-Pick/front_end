@@ -137,15 +137,15 @@ function BoardDetail() {
               new Date(board.updateTime).getSeconds() ? (
               <div id={styles.nick}>
                 {board.user_nickname} {new Date(board.time).getFullYear()}년{" "}
-                {new Date(board.time).getMonth()}월{" "}
-                {new Date(board.time).getDay()}일{" "}
+                {new Date(board.time).getMonth()+1}월{" "}
+                {new Date(board.time).getDate()}일{" "}
                 {new Date(board.time).getHours()}시
               </div>
             ) : (
               <div id={styles.nick}>
                 {board.user_nickname} {new Date(board.updateTime).getFullYear()}
-                년 {new Date(board.updateTime).getMonth()}월{" "}
-                {new Date(board.updateTime).getDay()}일{" "}
+                년 {new Date(board.updateTime).getMonth()+1}월{" "}
+                {new Date(board.updateTime).getDate()}일{" "}
                 {new Date(board.updateTime).getHours()}시 (수정됨)
               </div>
             )}
@@ -178,8 +178,8 @@ function BoardDetail() {
                     <div id={styles.etc2}>
                       <div id={styles.date}>
                         {new Date(item.time).getFullYear()}년{" "}
-                        {new Date(item.time).getMonth()}월{" "}
-                        {new Date(item.time).getDay()}일{" "}
+                        {new Date(item.time).getMonth()+1}월{" "}
+                        {new Date(item.time).getDate()}일{" "}
                         {new Date(item.time).getHours()}시
                       </div>
                       {item.user_user_id == sessionStorage.getItem("id") ? (

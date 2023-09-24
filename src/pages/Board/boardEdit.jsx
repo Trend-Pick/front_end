@@ -34,6 +34,7 @@ function BoardEdit() {
           type: "application/json",
         })
       );
+      formData.append("imgInPost", "");
     } else {
       formData.append(
         "createPostRequest",
