@@ -45,7 +45,7 @@ function BoardEdit() {
       formData.append("imgInPost", image);
     }
     try {
-      const response = await axios.put(`/update_post/${id}`, formData, {
+      const response = await axios.patch(`/update_post/${id}`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
