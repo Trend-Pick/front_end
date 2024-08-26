@@ -1,70 +1,50 @@
-# Getting Started with Create React App
+## **TrendPick**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<u></u>
 
-## Available Scripts
 
-In the project directory, you can run:
+#### **프로젝트 개요**
 
-### `npm start`
+> 스타일 공유 SNS 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+#### **프로젝트 소개**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+> Trend-pick은 사용자들이 서로의 옷 스타일을 평가할 수 있고 게시판 기능을 통해 정보를 공유하고 의논할 수 있는  서비스이다. 또한 랜덤으로 옷 스타일 사진을 보고 '좋아요', '별로에요'를 선택해서 좋아요 수를 기준으로 주간,월간,누적 순위를 조회할 수 있다.   
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### **주요 적용 기술**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- 개발 언어 : HTML, CSS, JavaScript, Java
+- 개발 도구 : Visual Studio Code, IntelliJ IDEA, Postman
+- 주요 기술 : React, axios, react router, Spring boot, JPA, MySQL
+- 배포 환경 : AWS EC2, S3, RDS
+- 협업 도구 : git, github, notion
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### **Trend_Pick 주요 기능 사진**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+###### **사진 업로드**
+<img width="224" alt="사진 업로드" src="https://github.com/Trend-Pick/.github/assets/102280807/1693b7bd-98a1-4081-9d01-97b6c88518c3">
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+###### **스타일 평가**
+<img width="224" alt="스타일 평가" src="https://github.com/Trend-Pick/.github/assets/102280807/1894ffd4-6eea-4df5-bd92-b6cea8d3d91b">
 
-## Learn More
+###### **패션 랭킹**
+<img width="224" alt="패션 랭킹" src="https://github.com/Trend-Pick/.github/assets/102280807/ebb8f4fd-3445-48d0-bdab-f4df1344a439">
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- 주간 랭킹, 월간 랭킹, 누적 랭킹 선택 가능
+<img width="224" alt="랭킹" src="https://github.com/Trend-Pick/.github/assets/102280807/78bb9ef9-03df-4bd9-8b4b-d470e797a8b5">
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+###### **마이페이지 - 패션 사진**
+<img width="224" alt="내가 올린 사진" src="https://github.com/Trend-Pick/.github/assets/102280807/808e3357-bda3-4e75-b8a3-766bafb4584c">
 
-### Code Splitting
+- 사진을 누르면 좋아요 개수 확인, 사진 삭제 가능
+<img width="224" alt="내가 올린 사진 상세" src="https://github.com/Trend-Pick/.github/assets/102280807/99ceaa62-433b-4a40-9890-cfb24798ee02">
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+###### **마이페이지 - 게시글**
+<img width="224" alt="내가 올린 게시글" src="https://github.com/Trend-Pick/.github/assets/102280807/e94f555b-e604-433f-8191-0ceb80fba074">
